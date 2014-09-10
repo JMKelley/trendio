@@ -5,6 +5,8 @@ Trendy::Application.routes.draw do
   
   mount Commontator::Engine => '/commontator'
 
+  resource :buckets, except: [:new, :edit, :show, :update]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

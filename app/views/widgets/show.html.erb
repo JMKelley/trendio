@@ -39,6 +39,8 @@
 
 <% end %>
 
+<a class="btn btn-primary btn-bucket" data-id="<%= @widget.id %>" href="<%= buckets_path %>">Bucket</a>
+
 <%= commontator_thread(@widget) %>
 
 <%= link_to 'Edit', edit_widget_path(@widget) %> |

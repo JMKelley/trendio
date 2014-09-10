@@ -14,4 +14,6 @@ class User < ActiveRecord::Base
 
   has_many:authorizations
   acts_as_commontator
+  has_many :widgets, through: :buckets
+  has_many :buckets
 end

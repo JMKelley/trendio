@@ -46,12 +46,15 @@
           </form>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Link</a></li>
-            <li><a href="#"><%= current_user.points %></a></li>
+            
 
         	<% if user_signed_in? %>
 			  <li>
 			  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
 			  </li>
+        <li>
+          <a href="#"><%= current_user.points %></a>
+        </li>
 			<% else %>
 			  <li>
 			  <%= link_to('Login', new_user_session_path)  %>  

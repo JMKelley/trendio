@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140910192519) do
+ActiveRecord::Schema.define(:version => 20140910212618) do
 
   create_table "authorizations", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(:version => 20140910192519) do
   add_index "badges_sashes", ["badge_id", "sash_id"], :name => "index_badges_sashes_on_badge_id_and_sash_id"
   add_index "badges_sashes", ["badge_id"], :name => "index_badges_sashes_on_badge_id"
   add_index "badges_sashes", ["sash_id"], :name => "index_badges_sashes_on_sash_id"
+
+  create_table "buckets", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "widget_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "buckets", ["user_id", "widget_id"], :name => "index_buckets_on_user_id_and_widget_id", :unique => true
 
   create_table "commontator_comments", :force => true do |t|
     t.string   "creator_type"
