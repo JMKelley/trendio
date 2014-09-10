@@ -1,0 +1,50 @@
+body
+{
+	background:#15181D;
+	font-family: 'Roboto', sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+a
+{
+	font-family: 'Roboto', sans-serif;
+}
+
+
+
+.navbar
+{
+	background:#682EA9;
+	border:none;
+	box-shadow:none;
+}
+
+.navbar-brand
+{
+	padding:11px 15px;
+}
+
+.navbar-default .navbar-nav > li > a
+{
+	color: #B396D4;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus
+{
+	background:transparent;
+	color:#fff;
+}
+
+.navbar-default .navbar-nav > li > a:hover
+{
+	color: #FFFFFF;
+}
+
+.navbar-nav > li > a {
+padding-top: 20px;
+padding-bottom: 20px;
+font-family: 'Roboto', sans-serif;
+font-size: 14px;
+color: #B396D4;
+font-weight:500;
+}

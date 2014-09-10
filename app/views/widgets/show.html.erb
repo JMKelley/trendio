@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @widget.title %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @widget.media %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @widget.content %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @widget.url %>
+</p>
+
+<p>
+  <b>Source:</b>
+  <%= @widget.source %>
+</p>
+
+<p>
+  <b>Ident:</b>
+</p>
+
+
+<% if @widget.source == "youtube" %>
+    <iframe width="560" height="315" src="//www.youtube.com/embed/<%= @widget.ident %>" frameborder="0" allowfullscreen></iframe>
+
+<% elsif @widget.source == "imgur" %>
+    <img src="<%= @widget.url %>" />
+
+
+<% end %>
+
+<%= commontator_thread(@widget) %>
+
+<%= link_to 'Edit', edit_widget_path(@widget) %> |
+<%= link_to 'Back', widgets_path %>

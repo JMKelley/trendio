@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div id="grid">
+    <% @widgets.each do |widget| %>
+
+
+        <% if widget.source == "youtube" %>
+            
+        <div class="item">
+            <%= link_to widget_path(widget) do %>
+              <img src="http://img.youtube.com/vi/<%= widget.ident %>/hqdefault.jpg">
+            <% end %>
+        </div>
+
+        <% end %>
+
+        <% if widget.source == "imgur" %>
+
+        <div class="item">
+            <%= link_to widget_path(widget) do %>
+                <img src="<%= widget.url %>/">
+            <% end %>
+        </div>
+
+        <% end %>
+
+
+
+    <% end %>
+    </div>
+</div>
+<br />
+
+<script>
+    $("#grid").gridalicious({
+      width: 400
+    });
+</script>
+
+<%= link_to 'New Widget', new_widget_path %>
+
