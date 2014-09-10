@@ -24,7 +24,7 @@ gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'commontator', '~> 4.7.2'
-gem 'gioco'
+gem 'merit'
 
 
 # To use ActiveModel has_secure_password

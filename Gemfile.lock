@@ -28,6 +28,7 @@ GEM
     activesupport (3.2.12)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    ambry (0.3.1)
     arel (3.0.3)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
@@ -50,7 +51,6 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.2.1)
-    gioco (1.1.1)
     hike (1.2.3)
     i18n (0.6.11)
     journey (1.0.4)
@@ -62,6 +62,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    merit (2.1.2)
+      ambry (~> 0.3.0)
     mime-types (1.25.1)
     multi_json (1.10.1)
     orm_adapter (0.5.0)
@@ -128,8 +130,8 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   commontator (~> 4.7.2)
   devise
-  gioco
   jquery-rails
+  merit
   rails (= 3.2.12)
   sass-rails (~> 3.2.3)
   sqlite3
