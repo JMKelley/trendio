@@ -10,6 +10,15 @@ a
 	font-family: 'Roboto', sans-serif;
 }
 
+.icon 
+{
+	font-family: icons;
+	vertical-align: middle;
+	line-height: 0;
+	margin-right: 10px;
+	font-size: 16px;
+	font-weight:normal;
+}
 
 
 .navbar
@@ -19,9 +28,20 @@ a
 	box-shadow:none;
 }
 
+.nav > li > a
+{
+	padding:10px 17px;
+}
+
 .navbar-brand
 {
 	padding:11px 15px;
+	height:60px;
+}
+
+.open-company-nav
+{
+	padding-left:5px !important;
 }
 
 .navbar-default .navbar-nav > li > a
@@ -41,10 +61,10 @@ a
 }
 
 .navbar-nav > li > a {
-padding-top: 20px;
-padding-bottom: 20px;
-font-family: 'Roboto', sans-serif;
-font-size: 14px;
-color: #B396D4;
-font-weight:500;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	color: #B396D4;
+	font-weight:500;
 }
