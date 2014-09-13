@@ -18,6 +18,26 @@
 </head>
 <body>
 
+<!-- OVERLAYING FOOTER MENU -->
+
+<div id="overlay-menu">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <ul>
+          <li><a href="#" id="overlay-close"><span class="icon">y</span></a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms Of Service</a></li>
+          <li><a href="http://www.youtube.com/watch?v=5J2kc4oZTVU" target="_blank">Bees?</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid">
@@ -35,7 +55,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="#" class="open-company-nav"><span class="icon">x</span></a></li>
+            <li><a href="#" id="overlay-open" class="open-company-nav"><span class="icon">x</span></a></li>
             <li><a href="#">Link</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -45,13 +65,17 @@
         <% if user_signed_in? %>
 
 			  <li>
-			     <a href="#"><span class="icon">a</span>Bucket</a>
+			     <a href="#" data-toggle="tooltip" data-placement="bottom" title="Ma Bucket!"><span class="icon">a</span>Bucket</a>
 			  </li>
+
         <li>
-          <%= link_to new_user_invitation_path do  %><span class="icon">&#xe00f;</span> Invite<% end %>
+          <%= link_to new_user_invitation_path do  %><span class="icon">&#xe00f;</span>Invite<% end %>
         </li>
+
         <li>
-          <a href="#"><span class="icon">H</span><%= current_user.points %></a>
+          <a href="#" id="points" data-toggle="tooltip" data-placement="bottom" title="My Score">
+            <span class="icon">H</span><%= current_user.points %>
+          </a>
         </li>
 
 			<% else %>
@@ -77,8 +101,6 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
 </nav>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 
 
 <%= yield %>

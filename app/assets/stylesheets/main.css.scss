@@ -3,12 +3,21 @@ body
 	background:#15181D;
 	font-family: 'Roboto', sans-serif;
 	-webkit-font-smoothing: antialiased;
+	padding-top:60px;
 }
 
 a
 {
 	font-family: 'Roboto', sans-serif;
 }
+
+/* EDITING ALERTS THAT DEVISE HAS SET */
+.alert
+{
+	margin-bottom:18px;
+}
+
+/* MASTER ICON MODIFICATIONS */
 
 .icon 
 {
@@ -20,6 +29,54 @@ a
 	font-weight:normal;
 }
 
+/* END */
+
+
+/* OVERLAY FOOTER NAVBAR */
+
+#overlay-menu
+{
+	width:100%;
+	height:100%;
+	display:none;
+	background-color:rgba(0,0,0,.8);
+	position:fixed;
+	top:0px;
+	left:0px;
+	z-index: 9;
+
+}
+
+.overlay-menu-visible
+{
+	display:block !important;
+}
+
+#overlay-menu ul
+{
+	list-style: none;
+	margin-top:100px;
+}
+
+#overlay-menu ul li a
+{
+	font-size:50px;
+	font-weight:500;
+	text-transform: uppercase;
+	text-decoration: none;
+	margin:60px;
+	padding:20px;
+	line-height: 90px;
+	background:none;
+}
+
+#overlay-menu .icon
+{
+	font-size:54px;
+	text-transform: lowercase;
+}
+
+/* NAVBAR MODIFICATIONS */
 
 .navbar
 {
@@ -37,11 +94,13 @@ a
 {
 	padding:11px 15px;
 	height:60px;
+	background: #682EA9;
 }
 
 .open-company-nav
 {
 	padding-left:5px !important;
+	font-size:17px;
 }
 
 .navbar-default .navbar-nav > li > a
@@ -68,3 +127,99 @@ a
 	color: #B396D4;
 	font-weight:500;
 }
+
+/* END */
+
+/* TOOLTIP MODIFICATIONS */
+
+
+.tooltip
+{
+	font-weight:bold;
+	font-size:12px;
+}
+
+.tooltip.bottom {
+  margin-top: -10px;
+}
+
+/* END */
+
+/* SMALL GRID MOD */
+
+#grid
+{
+	padding-top:10px;
+}
+
+/* END */
+
+/* INTRODUCTION BOX */
+
+.introduction
+{
+	background-color:#300E56;
+	padding:60px 20px;
+	position:relative;
+	overflow:hidden;
+}
+
+.introduction h1
+{
+	color:#fff;
+	font-weight: 500;
+	font-size:32px;
+	padding-bottom:10px;
+}
+
+.introduction p
+{
+	color:#A497B3;
+	font-size:16px;
+}
+
+.introduction #mascot
+{
+	position:absolute;
+	right:30px;
+	bottom:-190px;
+	-webkit-transition: all 300ms ease-out 1s;
+    -moz-transition: all 300ms ease-out 1s;
+    -o-transition: all 300ms ease-out 1s;
+    transition: all 300ms ease-out 1s;
+}
+
+.mascot-animate
+{
+	bottom:-60px !important;
+}
+
+.introduction .btn
+{
+	margin-top:25px;
+	float:right;
+	padding:14px 24px;
+	font-size: 15px;
+	font-weight: 500;
+	color: #FFFFFF;
+	background-color:#17BA8A;
+	border:0px;
+	/* Want an Invite?: */
+}
+
+.introduction .btn:hover
+{
+	background-color:#14CD96;
+}
+
+
+
+
+
+
+
+
+
+
+
+
