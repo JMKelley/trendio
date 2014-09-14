@@ -1,8 +1,35 @@
+<div class="container-fluid">
+
+  <div class="row widget-name">
+    <div class="col-md-8">
+      <h2><a href="/">Home / </a><%= @widget.title %></h2>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+
+  <div class="row content">
+    <div class="col-md-12">
+
+          <% if @widget.source == "youtube" %>
+          <iframe width="700" height="415" src="//www.youtube.com/embed/<%= @widget.ident %>" frameborder="0" allowfullscreen></iframe>
+
+          <% elsif @widget.source == "imgur" %>
+            <img src="<%= @widget.url %>" />
+
+
+          <% end %>
+
+    </div>
+  </div>
+
+</div>
+
 <p id="notice"><%= notice %></p>
 
 <p>
   <b>Title:</b>
-  <%= @widget.title %>
+
 </p>
 
 <p>
@@ -30,14 +57,7 @@
 </p>
 
 
-<% if @widget.source == "youtube" %>
-    <iframe width="560" height="315" src="//www.youtube.com/embed/<%= @widget.ident %>" frameborder="0" allowfullscreen></iframe>
 
-<% elsif @widget.source == "imgur" %>
-    <img src="<%= @widget.url %>" />
-
-
-<% end %>
 
 <a class="btn btn-primary btn-bucket" data-id="<%= @widget.id %>" href="<%= buckets_path %>">Bucket</a>
 
