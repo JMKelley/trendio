@@ -26,6 +26,7 @@ $( document ).ready(function() {
 $(document).ready(function() {
     $("body").tooltip({ selector: '[data-toggle=tooltip]' });
     $("#mascot").addClass("mascot-animate"); 
+    $("#mascot-icons").addClass("mascot-icons-animate"); 
 
     $('#overlay-open').click(function(){
       $("#overlay-menu").toggleClass("overlay-menu-visible");
