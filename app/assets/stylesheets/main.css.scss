@@ -39,7 +39,7 @@ a
 	width:100%;
 	height:100%;
 	display:none;
-	background-color:rgba(0,0,0,.8);
+	background-color:rgba(0,0,0,.9);
 	position:fixed;
 	top:0px;
 	left:0px;
@@ -183,10 +183,10 @@ a
 	position:absolute;
 	right:30px;
 	bottom:-190px;
-	-webkit-transition: all 300ms ease-out 1s;
-    -moz-transition: all 300ms ease-out 1s;
-    -o-transition: all 300ms ease-out 1s;
-    transition: all 300ms ease-out 1s;
+	-webkit-transition: all 300ms ease-out 0.2s;
+    -moz-transition: all 300ms ease-out 0.2s;
+    -o-transition: all 300ms ease-out 0.2s;
+    transition: all 300ms ease-out 0.2s;
     z-index: 2;
 }
 
@@ -200,10 +200,10 @@ a
 	position:absolute;
 	right:-15px;
 	bottom:-190px;
-	-webkit-transition: all 500ms ease-out 1s;
-    -moz-transition: all 500ms ease-out 1s;
-    -o-transition: all 500ms ease-out 1s;
-    transition: all 500ms ease-out 1s;
+	-webkit-transition: all 500ms ease-out 0.2s;
+    -moz-transition: all 500ms ease-out 0.2s;
+    -o-transition: all 500ms ease-out 0.2s;
+    transition: all 500ms ease-out 0.2s;
     z-index: 1;
 }
 
@@ -230,10 +230,65 @@ a
 	background-color:#14CD96;
 }
 
+/* END OF INTRODUCTION BOX */
 
 
+/* START OF SORTING BAR STYLES */
 
+.sorting .icon
+{
+	font-size: 19px;
+}
 
+.sorting ul li a
+{
+	font-size:17px;
+	color:#6A7689;
+	text-decoration: none;
+	background:none;
+	padding:35px 50px 30px 0px;
+	display:block;
+	margin:0px;
+}
+
+.sorting ul
+{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+	padding-left:10px;
+}
+
+.sorting ul li
+{
+	float:left;
+}
+
+.sorting ul li:last-child
+{
+	float:right;
+	padding-right:0px;
+}
+
+.sorting ul li .trending:hover
+{
+	color:#F6A033;
+}
+
+.sorting ul li .commented:hover
+{
+	color:#4ACE6F;
+}
+
+.sorting ul li .editor:hover
+{
+	color:#EF5390;
+}
+
+.sorting ul li .random:hover
+{
+	color:#FCBC13;
+}
 
 
 
