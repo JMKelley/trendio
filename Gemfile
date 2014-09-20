@@ -28,7 +28,7 @@ gem 'merit'
 gem 'devise_invitable', '~> 1.3.4'
 
 gem 'markable'
-#gem 'will_paginate', '~> 3.0.5'
+gem 'will_paginate', '~> 3.0.5'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

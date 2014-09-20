@@ -1,8 +1,9 @@
 class WidgetsController < ApplicationController
   # GET /widgets
   # GET /widgets.json
+
   def index
-    @widgets = Widget.all
+    @widgets = Widget.paginate(:page => params[:page], :per_page => 20)
 
     respond_to do |format|
       format.html # index.html.erb

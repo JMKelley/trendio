@@ -38,6 +38,18 @@ $(document).ready(function() {
     $('#overlay-close').click(function(){
       $("#overlay-menu").toggleClass("overlay-menu-visible");
     });
+
+    $(window).scroll(function () {
+      if (($(window).scrollTop() + $(window).height()) > 0.8 * $(document).height()) {
+         $(".pages").addClass("pages-inview");
+      } else {
+        $(".pages").removeClass("pages-inview");
+      }
+    });
+
+    if ($(document).height() <= $(window).height()) {
+      $(".pages").addClass("pages-inview");
+    }
 });
 
 $(document).ready(function() {
@@ -55,3 +67,5 @@ $(document).ready(function() {
   $container.on('click', loop);
   
 });
+
+

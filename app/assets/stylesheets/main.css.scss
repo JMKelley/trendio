@@ -605,7 +605,58 @@ a
 
 /* END OF REGISTRATION PAGE */
 
+/* START OF PAGES NAV */
+
+.pages
+{
+	background:rgba(9, 10, 17, 0.98);
+	position:fixed;
+	font-size:20px;
+	bottom:-100px;
+	left:0;
+	width:100%;
+		-webkit-transition: all 500ms ease-out 0.2s;
+    -moz-transition: all 500ms ease-out 0.2s;
+    -o-transition: all 500ms ease-out 0.2s;
+    transition: all 500ms ease-out 0.2s;
+    z-index: 20;
+}
+
+.pages a
+{
+	color:#fff;
+	text-decoration: none;
+}
+
+.pages-inview
+{
+	bottom:0px;
+}
+
+.pagination {
+	display: block;
+	padding-left: 0;
+	margin: 0px 0;
+
+}
 
 
+.pagination .previous_page
+{
+	width: 50%;
+	display: block;
+	float: left;
+	padding:20px;
+	text-align: left;
+}
+
+.pagination .next_page
+{
+	width: 50%;
+	display: block;
+	float: right;	
+	padding:20px;
+	text-align: right;
+}
 
 
