@@ -65,13 +65,17 @@
             <% end %>
 
                 <div class="information">
-                    <h4><%= widget.title %></h4>
-                    <p><%= widget.source %></p>
+                    <div class="vert">
+                        <div class="inner">
+                            <h4><%= widget.title %></h4>
+                            <p><%= widget.source %></p>
+                        </div>
+                    </div>
                 </div>
             
 
             <div class="social-links">
-                <a class="btn btn-social"><span class="icon">l</span></a>
+                <a class="btn btn-social"><span class="icon">a</span></a>
                 <a class="btn btn-social"><span class="icon">l</span></a>
             </div>
 
@@ -86,11 +90,16 @@
 
         <div class="item">
             <%= link_to widget_path(widget) do %>
-                <img src="<%= widget.url %>/">
+                <img src="<%= widget.url %>">
             <% end %>
-              <div class="information">
-                    <h4><%= widget.title %></h4>
-                    <p><%= widget.source %></p>
+
+                <div class="information">
+                    <div class="vert">
+                        <div class="inner">
+                            <h4><%= widget.title %></h4>
+                            <p><%= widget.source %></p>
+                        </div>
+                    </div>
                 </div>
             
 
@@ -114,7 +123,7 @@
 
 <script>
     $("#grid").gridalicious({
-      gutter: 4,
+      gutter: 6,
       width: 400
     });
 </script>
