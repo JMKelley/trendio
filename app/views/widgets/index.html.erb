@@ -75,8 +75,8 @@
             
 
             <div class="social-links">
-                <a class="btn btn-social"><span class="icon">a</span></a>
-                <a class="btn btn-social"><span class="icon">l</span></a>
+                <a data-toggle="tooltip" data-placement="bottom" title="Add to bucket" class="btn btn-social btn-bucket"><span class="icon">a</span></a>
+                <a class="btn btn-social btn-share"><span class="icon">+</span></a>
             </div>
 
             <div class="overlay">
@@ -90,7 +90,7 @@
 
         <div class="item">
             <%= link_to widget_path(widget) do %>
-                <img src="<%= widget.url %>">
+                <img data-original="<%= widget.url %>" class="lazy">
             <% end %>
 
                 <div class="information">
@@ -104,8 +104,8 @@
             
 
             <div class="social-links">
-                <a class="btn btn-social">Bucket</a>
-                <a class="btn btn-social">Share</a>
+                <a data-toggle="tooltip" data-placement="bottom" title="Add to bucket" class="btn btn-social btn-bucket"><span class="icon">a</span></a>
+                <a class="btn btn-social btn-share"><span class="icon">+</span></a>
             </div>
 
             <div class="overlay">
@@ -123,8 +123,15 @@
 
 <script>
     $("#grid").gridalicious({
-      gutter: 6,
-      width: 400
+      gutter: 10,
+      width: 300,
+      animate: true,
+      animationOptions: {
+        queue: true,
+        speed: 200,
+        duration: 300,
+        effect: 'fadeInOnAppear',
+      }
     });
 </script>
 
