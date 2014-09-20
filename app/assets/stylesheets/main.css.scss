@@ -6,6 +6,11 @@ body
 	padding-top:60px;
 }
 
+input
+{
+	-webkit-font-smoothing: antialiased;
+}
+
 a
 {
 	font-family: 'Roboto', sans-serif;
@@ -92,7 +97,7 @@ a
 
 .navbar-brand
 {
-	padding:11px 15px;
+	padding:14px 15px;
 	height:60px;
 	background: #682EA9;
 }
@@ -168,7 +173,7 @@ a
 {
 	color:#fff;
 	font-weight: 500;
-	font-size:32px;
+	font-size:38px;
 	padding-bottom:10px;
 }
 
@@ -176,6 +181,7 @@ a
 {
 	color:#A497B3;
 	font-size:16px;
+	line-height:26px;
 }
 
 .introduction #mascot
@@ -214,7 +220,7 @@ a
 
 .introduction .btn
 {
-	margin-top:25px;
+	margin-top:50px;
 	float:right;
 	padding:14px 24px;
 	font-size: 15px;
@@ -300,11 +306,19 @@ a
 	color: #FFF;
 	line-height: 40px;
 	font-weight: 400;
+	margin:20px 0px;
 }
 
 .widget-name h2 a
 {
 	color: #4E525D;
+	text-decoration: none;
+}
+
+.widget-name h2 a:hover
+{
+	background:none;
+	color:#6B6F80;
 }
 
 .content
@@ -313,6 +327,121 @@ a
 }
 
 /* END OF INNER POST PAGE */
+
+
+/* START OF REGISTRATION PAGE */
+
+.register .background
+{
+	background:url('register-bg.png') no-repeat center center fixed;
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	  opacity:0.08;
+	    height: 100%;
+	    width: 100%;
+	    left: 0;
+	    top: 0;
+	    overflow: hidden;
+	    position: fixed;
+}
+
+.register
+{
+	color:#fff;
+	text-align: center;
+	padding-top:50px;
+
+	::-webkit-input-placeholder {
+	   font-size:14px; 
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+	   font-size:14px; 
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+	   font-size:14px; 
+	}
+
+	:-ms-input-placeholder {  
+	   font-size:14px; 
+	}
+
+}
+
+
+
+.register .sign-up-button input
+{
+	width:257px;
+	border-radius: 5px;
+	font-family: 'Roboto', sans-serif;
+	padding:14px 24px;
+	font-size: 15px;
+	font-weight: 500;
+	color: #FFFFFF;
+	background-color:#17BA8A;
+	border:0px;
+
+}
+
+.register h1
+{
+	font-size:40px;
+	font-weight:400;
+	padding:10px;
+}
+
+.register p
+{
+	font-size:16px;
+	font-weight: 400;
+	opacity:0.7;
+	line-height: 26px;
+	padding-bottom:25px;
+}
+
+.register input
+{
+	-webkit-appearance: none;
+	background:#fff;
+	border:none;
+	padding:15px;
+	display:block;
+	margin:auto;
+	margin-bottom:4px;
+	color:#1E8BC3;
+}
+
+
+
+.register .top-rounded input
+{
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.register .bottom-rounded input
+{
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	margin-bottom:20px;
+}
+
+
+/* END OF REGISTRATION PAGE */
+
+
 
 
 

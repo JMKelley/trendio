@@ -5,14 +5,16 @@
       <h2><a href="/">Home / </a><%= @widget.title %></h2>
     </div>
     <div class="col-md-4">
+      <a href="#" class="btn btn-bucket">Bucket</a>
+      <a href="#" class="btn btn-share">Share</a>
     </div>
   </div>
 
   <div class="row content">
-    <div class="col-md-12">
+    <div class="col-md-12 text-center">
 
           <% if @widget.source == "youtube" %>
-          <iframe width="700" height="415" src="//www.youtube.com/embed/<%= @widget.ident %>" frameborder="0" allowfullscreen></iframe>
+          <iframe width="900" height="515" src="//www.youtube.com/embed/<%= @widget.ident %>?rel=0&amp;autohide=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
           <% elsif @widget.source == "imgur" %>
             <img src="<%= @widget.url %>" />

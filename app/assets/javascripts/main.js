@@ -2,7 +2,7 @@ $( document ).ready(function() {
   $('.btn-bucket').click(function(e) {
   	e.preventDefault();
   	var id = $(this).data('id');
-  	var url = $(this).attr('href');
+  	var url = $(this).attr('href') + '.json';
 
   	$.ajax({
   		url: url,
@@ -37,4 +37,18 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function() {
 
+  var $container = $('.container,.nav');
+
+  function loop(){  
+    if($container.hasClass('on')) {
+      $container.removeClass('on');
+    } else {
+       $container.addClass('on');
+    }
+  }
+
+  $container.on('click', loop);
+  
+});

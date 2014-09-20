@@ -6,7 +6,11 @@ class BucketsController < ApplicationController
     widget_id = params[:widget_id]
     bucket = Bucket.new(widget_id: widget_id, user_id: current_user.id)
     bucket.save
-    render :json, bucket
+    respond_to do |format|
+      format.json { 
+        render json: bucket
+      }
+    end
   end
 
   def destroy
