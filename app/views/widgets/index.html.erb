@@ -57,9 +57,27 @@
         <% if widget.source == "youtube" %>
             
         <div class="item">
+
             <%= link_to widget_path(widget) do %>
-              <img src="http://img.youtube.com/vi/<%= widget.ident %>/hqdefault.jpg">
+
+                <img src="http://img.youtube.com/vi/<%= widget.ident %>/hqdefault.jpg">
+
             <% end %>
+
+                <div class="information">
+                    <h4><%= widget.title %></h4>
+                    <p><%= widget.source %></p>
+                </div>
+            
+
+            <div class="social-links">
+                <a class="btn btn-social"><span class="icon">l</span></a>
+                <a class="btn btn-social"><span class="icon">l</span></a>
+            </div>
+
+            <div class="overlay">
+            </div>
+
         </div>
 
         <% end %>
@@ -70,6 +88,19 @@
             <%= link_to widget_path(widget) do %>
                 <img src="<%= widget.url %>/">
             <% end %>
+              <div class="information">
+                    <h4><%= widget.title %></h4>
+                    <p><%= widget.source %></p>
+                </div>
+            
+
+            <div class="social-links">
+                <a class="btn btn-social">Bucket</a>
+                <a class="btn btn-social">Share</a>
+            </div>
+
+            <div class="overlay">
+            </div>
         </div>
 
         <% end %>
