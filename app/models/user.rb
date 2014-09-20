@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_merit
-
+  acts_as_marker
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140913113415) do
+ActiveRecord::Schema.define(:version => 20140920125437) do
 
   create_table "authorizations", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -94,6 +94,18 @@ ActiveRecord::Schema.define(:version => 20140913113415) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "marks", :id => false, :force => true do |t|
+    t.integer  "marker_id"
+    t.string   "marker_type"
+    t.integer  "markable_id"
+    t.string   "markable_type"
+    t.string   "mark",          :limit => 128
+    t.datetime "created_at"
+  end
+
+  add_index "marks", ["markable_id", "markable_type", "mark"], :name => "index_marks_on_markable_id_and_markable_type_and_mark"
+  add_index "marks", ["marker_id", "marker_type", "mark"], :name => "index_marks_on_marker_id_and_marker_type_and_mark"
+
   create_table "merit_actions", :force => true do |t|
     t.integer  "user_id"
     t.string   "action_method"
@@ -155,6 +167,7 @@ ActiveRecord::Schema.define(:version => 20140913113415) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      :default => 0
+    t.string   "role"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
