@@ -52,6 +52,26 @@ $(document).ready(function() {
     }
 });
 
+
+$(window).load(function() {
+
+  var height = +$('#show-image').height();
+  var width = +$('#show-image').width();
+  var ratio = width/height;
+
+  console.log([height,width,ratio])
+
+  if(ratio >= 1.2) {
+    $("#show-image").addClass("landscape");
+  }
+
+  else {
+    $("#show-image").addClass("portrait");
+  }
+
+});
+
+
 $(document).ready(function() {
 
   var $container = $('.container,.nav');

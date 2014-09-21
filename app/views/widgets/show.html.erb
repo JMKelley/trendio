@@ -1,28 +1,36 @@
-<div class="container-fluid">
+<div class="container">
 
   <div class="row widget-name">
-    <div class="col-md-8">
-      <h2><a href="/">Home / </a><%= @widget.title %></h2>
+    <div class="col-md-9">
+      <h2><%= @widget.title %></h2>
+      <p>Source | Comments | 20 Minutes Ago</p>
     </div>
-    <div class="col-md-4">
-      <a href="#" class="btn btn-bucket">Bucket</a>
-      <a href="#" class="btn btn-share">Share</a>
+    <div class="col-md-3 social-buttons">
+      <%= link_to "Prev", @widget.prev, class: "btn btn-prev"  %>">
+      <%= link_to "Next", @widget.next, class: "btn btn-next"  %>">
     </div>
   </div>
 
-  <div class="row content">
-    <div class="col-md-12 text-center">
+  <div class="row">
+    <div class="col-md-9 content text-center">
 
           <% if @widget.source == "youtube" %>
-          <iframe width="900" height="515" src="//www.youtube.com/embed/<%= @widget.ident %>?rel=0&amp;autohide=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+          <iframe width="100%" height="515" src="//www.youtube.com/embed/<%= @widget.ident %>?rel=0&amp;autohide=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
           <% elsif @widget.source == "imgur" %>
-            <img src="<%= @widget.url %>" />
+            <img src="<%= @widget.url %>" id="show-image" class="image"/>
 
 
           <% end %>
 
     </div>
+
+    <div class="col-md-3 function-buttons">
+      <a href="#" class="btn btn-bucket"><span class="icon">a</span>Save to Bucket</a>
+      <a href="#" class="btn btn-facebook"><span class="icon">a</span>Share on Facebook</a>
+      <a href="#" class="btn btn-twitter"><span class="icon">a</span>Share on Twitter</a>
+    </div>
+
   </div>
 
 </div>
