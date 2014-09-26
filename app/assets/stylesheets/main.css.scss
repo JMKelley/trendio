@@ -6,10 +6,10 @@
 
 body
 {
-	background:#15181D;
+	background:#1D2127;
 	font-family: 'Roboto', sans-serif;
 	-webkit-font-smoothing: antialiased;
-	padding-top:60px;
+	padding-top:50px;
 }
 
 p
@@ -96,9 +96,10 @@ a
 
 .navbar
 {
-	background:#682EA9;
+	background:#69369C;
 	border:none;
-	box-shadow:none;
+-moz-box-shadow:    0px 1px 0px 0px rgba(0,0,0,.5);
+box-shadow:         0px 1px 0px 0px rgba(0,0,0,.5);
 }
 
 .nav > li > a
@@ -108,9 +109,7 @@ a
 
 .navbar-brand
 {
-	padding:14px 15px;
-	height:60px;
-	background: #682EA9;
+	padding:14px 10px;
 }
 
 .open-company-nav
@@ -122,6 +121,11 @@ a
 .navbar-default .navbar-nav > li > a
 {
 	color: #B396D4;
+}
+
+.navbar-default .navbar-nav > li > a:hover
+{
+	background:#7542A8;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus
@@ -136,8 +140,8 @@ a
 }
 
 .navbar-nav > li > a {
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 17px;
+	padding-bottom: 17px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
 	color: #B396D4;
@@ -165,48 +169,44 @@ a
 
 #grid
 {
-	padding-top:10px;
+	padding-top:30px;
 }
 
 
-.item
+.item { width: 269px; display:block; float:left; margin:0px 20px 20px 0px;}
+.item.w2 { width: 50%; overflow:hidden;}
+
+.item .img-container img
 {
-	position:relative;
-	overflow: hidden;
-	background:#000;
+width: auto;
+height: 120%;
+margin-left: auto;
+margin-right: auto;
+display:block;
 }
 
-
-.item .overlay
+.item .img-container
 {
-	position:absolute;
-	width: 100%;
-    height: 100%;
-    opacity:0;
-    z-index: 9;
-    top: 0;
-    left: 0;
-    pointer-events:none;
-	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-	background:#000;
-		-webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+	height: 269px;
+	overflow:hidden;
+	width:100%;
 }
+
 
 .item .information
 {
-	position:absolute;
 	z-index: 10;
 	width:100%;
-	height:100%;
+	height:110px;
 	padding:10px;
-	text-align: center;
-	top:0;
-	left:0;
-	display: none;
-	pointer-events:none;
+	display: block;
+	background:#13121A;
+	-webkit-border-bottom-right-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
 
 	a 
 	{
@@ -217,10 +217,15 @@ a
 	h4
 	{
 		color:#fff;
-		font-size: 22px;
+		font-size: 15px;
 		font-weight: 500;
-		text-shadow: 0 1px 1px #292727;
 		vertical-align: middle;
+		line-height: 20px;
+		padding-left:10px;
+		overflow: hidden;
+    	text-overflow: ellipsis; 
+    	white-space: nowrap; 
+
 	}
 
 	p
@@ -233,18 +238,18 @@ a
 		text-transform: uppercase;
 	}
 
-	.vert
+	.user
 	{
-		display:table;
-		height:100%;
-		width:100%;
+		padding-left:10px;
+		font-size:12px;
+		opacity:0.5;
 	}
 
-	.inner
+	.user .icon
 	{
-		display:table-cell;
-		vertical-align: middle;
+		font-size:11px;
 	}
+
 
 }
 
@@ -299,7 +304,7 @@ a
 
 .item:hover .overlay
 {
-	opacity:0.92;
+	opacity:0.97;
 }
 
 .item:hover .social-links
@@ -411,20 +416,37 @@ a
 
 /* START OF SORTING BAR STYLES */
 
+.sorting
+{
+	background:#13121A;
+}
+
 .sorting .icon
 {
 	font-size: 19px;
+	margin-right:15px;
+	-webkit-transition: all 100ms ease-in-out;
+    -moz-transition: all 100ms ease-in-out;
+    -o-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
 }
 
 .sorting ul li a
 {
-	font-size:17px;
-	color:#6A7689;
+	font-size:16px;
+	color:#8995A8;
 	text-decoration: none;
 	background:none;
-	padding:35px 50px 30px 0px;
+	padding: 36px 50px 30px 0px;
 	display:block;
 	margin:0px;
+	font-weight: 500;
+	letter-spacing: 0.01em;
+}
+
+.sorting ul li a:hover .icon
+{
+	font-size: 24px;
 }
 
 .sorting ul
@@ -438,6 +460,11 @@ a
 .sorting ul li
 {
 	float:left;
+}
+
+.sorting .container
+{
+	padding:0px;
 }
 
 .sorting ul li:last-child
@@ -513,7 +540,7 @@ a
 {
 	width:60%;
 	height:auto;
-	padding:20px;
+	padding:20px 0px;
 }
 
 .portrait

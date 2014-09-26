@@ -24,9 +24,7 @@ $( document ).ready(function() {
 
 
 $(document).ready(function() {
-    $("img.lazy").lazyload({
-      threshold : 100
-    });
+  
     $("body").tooltip({ selector: '[data-toggle=tooltip]' });
     $("#mascot").addClass("mascot-animate"); 
     $("#mascot-icons").addClass("mascot-icons-animate"); 
@@ -87,5 +85,7 @@ $(document).ready(function() {
   $container.on('click', loop);
   
 });
+
+
 
 

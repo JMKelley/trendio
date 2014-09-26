@@ -1,7 +1,9 @@
 <div class="container-fluid">
 
     <!-- START OF INTRODUCTION BOX -->
+<% if user_signed_in? %>
 
+<% else %>
     <div class="row introduction">
         <div class='container'>
         <div class="col-md-12">
@@ -29,31 +31,37 @@
         </div>
         </div>
     </div>
-
+<% end %>
 </div>
+
 <!-- END OF INTRODUCTION BOX -->
 
-<div class="container">
-<!-- START OF SORTING BAR -->
-<div class="row sorting">
-    <div class="col-md-12">
-        <ul class="clearfix">
-            <li>
-                <a href="#" class="trending"><span class="icon">l</span>Top Trending</a>
-            </li>
-            <li>
-                <a href="#" class="commented"><span class="icon">p</span>Most Commented</a>
-            </li>
-            <li>
-                <a href="#" class="editor"><span class="icon">n</span>Editor's Choice</a>
-            </li>
-            <li>
-                <a href="#" class="random"><span class="icon">v</span>Random</a>
-            </li>
-        </ul>
+<div class="container-fluid sorting">
+    <!-- START OF SORTING BAR -->
+    <div class="row">
+        <div class="container">
+            <div class="col-md-12">
+                <ul class="clearfix">
+                    <li>
+                        <a href="#" class="trending"><span class="icon">l</span>Top Trending</a>
+                    </li>
+                    <li>
+                        <a href="#" class="commented"><span class="icon">p</span>Most Commented</a>
+                    </li>
+                    <li>
+                        <a href="#" class="editor"><span class="icon">n</span>Editor's Choice</a>
+                    </li>
+                    <li>
+                        <a href="#" class="random"><span class="icon">v</span>Random</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
 
+
+<div class="container">
     <div id="grid">
     <% @widgets.each do |widget| %>
 
@@ -63,29 +71,33 @@
         <div class="item">
 
             <%= link_to widget_path(widget) do %>
-
+            <div class="img-container">
                 <img src="http://img.youtube.com/vi/<%= widget.ident %>/hqdefault.jpg">
-
+            </div>
             <% end %>
 
                 <div class="information">
-                    <div class="vert">
-                        <div class="inner">
+                    <div class="row">
+                        <div class="col-md-12 title">
                             <h4><%= widget.title %></h4>
-                            <p><%= widget.source %></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12"> 
+                            <p class="user"><span class="icon">&#xe002;</span>@Test</p>
                         </div>
                     </div>
                 </div>
             
 
-            <div class="social-links">
+            <!--<div class="social-links">
                 <a data-toggle="tooltip" data-placement="bottom" title="Add to bucket" class="btn btn-social btn-bucket"><span class="icon">a</span></a>
                 <a class="btn btn-social btn-share"><span class="icon">+</span></a>
             </div>
 
             <div class="overlay">
             </div>
-
+            -->
         </div>
 
         <% end %>
@@ -94,14 +106,20 @@
 
         <div class="item">
             <%= link_to widget_path(widget) do %>
-                <img data-original="<%= widget.url %>" class="lazy">
+            <div class="img-container">
+                <img src="<%= widget.url %>">
+            </div>
             <% end %>
 
                 <div class="information">
-                    <div class="vert">
-                        <div class="inner">
+                    <div class="row">
+                        <div class="col-md-12 title">
                             <h4><%= widget.title %></h4>
-                            <p><%= widget.source %></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12"> 
+                            <p class="user"><span class="icon">&#xe002;</span>@Test</p>
                         </div>
                     </div>
                 </div>
@@ -135,7 +153,7 @@
     
 <br />
 
-<script>
+<!-- <script>
     $("#grid").gridalicious({
       gutter: 10,
       width: 250,
@@ -148,6 +166,8 @@
       }
     });
 </script>
+-->
+
 
 
 <%= link_to 'New Widget', new_widget_path %>
