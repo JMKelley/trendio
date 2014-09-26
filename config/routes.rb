@@ -1,5 +1,6 @@
 Trendy::Application.routes.draw do
   devise_for :users
+  get 'tags/:tag', to: 'widgets#index', as: :tag
 
   resources :widgets
   

@@ -3,8 +3,13 @@ class WidgetsController < ApplicationController
   # GET /widgets.json
 
   def index
-    @widgets = Widget.paginate(:page => params[:page], :per_page => 20)
 
+  if params[:tag]
+    @widgets = Widget.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 20)
+  else
+    @widgets = Widget.paginate(:page => params[:page], :per_page => 20)
+  end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @widgets }

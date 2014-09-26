@@ -85,6 +85,7 @@
                     <div class="row">
                         <div class="col-md-12"> 
                             <p class="user"><span class="icon">&#xe002;</span>@Test</p>
+                            <%= raw widget.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
                         </div>
                     </div>
                 </div>
@@ -120,6 +121,7 @@
                     <div class="row">
                         <div class="col-md-12"> 
                             <p class="user"><span class="icon">&#xe002;</span>@Test</p>
+                            <%= raw widget.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
                         </div>
                     </div>
                 </div>
