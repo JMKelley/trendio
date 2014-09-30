@@ -48,6 +48,8 @@ class WidgetsController < ApplicationController
   def create
     @widget = Widget.new(params[:widget])
 
+    @widget.populate!
+
     respond_to do |format|
       if @widget.save
         format.html { redirect_to @widget, notice: 'Widget was successfully created.' }

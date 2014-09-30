@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="col-md-2 col-md-offset-2">
-                    <%= link_to "Sign up for Trendly", new_user_registration_path, class: "btn btn-primary"  %>">
+                    <%= link_to "Sign up for Trendly", new_user_registration_path, class: "btn btn-primary"  %>
                 </div>
 
                 <div id="mascot">
@@ -48,9 +48,12 @@
                     <li>
                         <a href="#" class="commented"><span class="icon">p</span>Most Commented</a>
                     </li>
+                    <li>
+                        <a href="#" class="trending"><span class="icon">o</span>Newest</a>
+                    </li>
                     
                     <li>
-                        <a href="#" class="post"><btn class="btn btn-new">New Article</btn></a>
+                        <%= link_to "New Article", new_widget_path, class: "btn btn-new"  %>
                     </li>
                 </ul>
             </div>
@@ -64,15 +67,17 @@
     <% @widgets.each do |widget| %>
 
 
-        <% if widget.source == "youtube" %>
+        <% if widget.media == "photo" %>
             
         <div class="item">
 
             <%= link_to widget_path(widget) do %>
             <div class="img-container">
-                <img src="http://img.youtube.com/vi/<%= widget.ident %>/hqdefault.jpg">
+                <img src="<%= widget.content %>">
             </div>
-            <% end %>
+        <% end %>
+
+
 
                 <div class="information">
                     <div class="row">
@@ -101,12 +106,12 @@
 
         <% end %>
 
-        <% if widget.source == "imgur" %>
+        <% if widget.media == "video" %>
 
         <div class="item">
             <%= link_to widget_path(widget) do %>
             <div class="img-container">
-                <img src="<%= widget.url %>">
+                <img src="<%= widget.thumb %>">
             </div>
             <% end %>
 

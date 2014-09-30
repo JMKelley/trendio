@@ -27,6 +27,8 @@ gem 'commontator', '~> 4.7.2'
 gem 'merit'
 gem 'devise_invitable', '~> 1.3.4'
 
+gem 'embedly'
+
 gem 'markable'
 gem 'will_paginate', '~> 3.0.5'
 gem 'acts-as-taggable-on', '~> 3.4'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140926214829) do
+ActiveRecord::Schema.define(:version => 20140930202021) do
 
   create_table "authorizations", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -187,7 +187,6 @@ ActiveRecord::Schema.define(:version => 20140926214829) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      :default => 0
-    t.string   "role"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
@@ -205,6 +204,7 @@ ActiveRecord::Schema.define(:version => 20140926214829) do
     t.string   "ident"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "thumb"
   end
 
 end

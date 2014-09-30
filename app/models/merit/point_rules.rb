@@ -25,7 +25,8 @@ module Merit
       # ]
 
       score 100, :on => [
-        'commontator/comments#new'
+        'commontator/comments#new',
+        'widgets#create'
       ]
     end
   end

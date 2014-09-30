@@ -108,6 +108,21 @@ a
 .navbar-brand
 {
 	padding:15px 10px;
+
+	overflow:hidden;
+}
+
+.navbar-brand img
+{
+			-webkit-transition: all 0.3s ease-in-out;
+			  -moz-transition: all 0.3s ease-in-out;
+			  -o-transition: all 0.3s ease-in-out;
+			  transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand:hover img
+{
+	margin-top: -55px;
 }
 
 .navbar-default 
@@ -179,8 +194,13 @@ a
 }
 
 
-.item { width: 269px; display:block; float:left; margin:0px 20px 20px 0px;}
+.item { width: 269px; display:block; float:left; margin:0px 30px 30px 0px;}
 .item.w2 { width: 50%; overflow:hidden;}
+
+.item:nth-child(4n)
+{
+	margin-right:0px;
+}
 
 .item .img-container img
 {
@@ -189,6 +209,13 @@ height: 120%;
 margin-left: auto;
 margin-right: auto;
 display:block;
+}
+
+
+.item .img-container iframe
+{
+	height:269px !important;
+	width:269px !important;
 }
 
 .item .img-container
@@ -470,6 +497,7 @@ box-shadow:         0px 1px 1px 0px rgba(0,0,0,0.11);
 	display:block;
 	font-weight: 500;
 	color:#fff;
+	margin:20px 0px;
 }
 
 .sorting ul li
@@ -523,13 +551,14 @@ box-shadow:         0px 1px 1px 0px rgba(0,0,0,0.11);
 	padding:20px 0px;
 }
 
+
 .widget-name h2
 {
 	font-size: 28px;
-	color: #FFF;
-	line-height: 40px;
+	color: #47464A;
+	line-height: 30px;
 	font-weight: 500;
-	margin:10px 0px;
+	margin:0px 0px 10px 0px;
 }
 
 .widget-name h2 a
@@ -549,11 +578,11 @@ box-shadow:         0px 1px 1px 0px rgba(0,0,0,0.11);
 	color:#898F9E;
 	font-weight: 500;
 	font-size:13px; 
+	margin:0px;
 }
 
 .content
 {
-	background-color:#0A0C0F;
 	border-radius: 4px;
 }
 
@@ -639,20 +668,25 @@ box-shadow:         0px 1px 1px 0px rgba(0,0,0,0.11);
 	border-bottom-right-radius: 0px;
 }
 
+.inpost-header
+{
+	background:#fff;
+}
+
 
 .function-buttons a
 {
-	margin-bottom:16px;
+	margin:4px 5px 0px 0px;
 	color:#fff;
 	font-size:14px;
 	font-weight:500;
-	padding: 13px 42px;
-	width:100%;
+	padding: 13px 12px;
+	float:left;
 }
 
-.function-buttons .btn-bucket
+.function-buttons .btn-love
 {
-	background-color:#3C414F;
+	background-color:#E3485B;
 }
 
 .function-buttons .btn-facebook
@@ -834,5 +868,6 @@ box-shadow:         0px 1px 1px 0px rgba(0,0,0,0.11);
 	padding:20px;
 	text-align: right;
 }
+
 
 
