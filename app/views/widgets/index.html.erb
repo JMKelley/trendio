@@ -43,16 +43,14 @@
             <div class="col-md-12">
                 <ul class="clearfix">
                     <li>
-                        <a href="#" class="trending"><span class="icon">l</span>Top Trending</a>
+                        <a href="#" class="editor"><span class="icon">n</span>Most Popular</a>
                     </li>
                     <li>
                         <a href="#" class="commented"><span class="icon">p</span>Most Commented</a>
                     </li>
+                    
                     <li>
-                        <a href="#" class="editor"><span class="icon">n</span>Editor's Choice</a>
-                    </li>
-                    <li>
-                        <a href="#" class="random"><span class="icon">v</span>Random</a>
+                        <a href="#" class="post"><btn class="btn btn-new">New Article</btn></a>
                     </li>
                 </ul>
             </div>
@@ -84,7 +82,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12"> 
-                            <p class="user"><span class="icon">&#xe002;</span>@Test</p>
+                            <p class="user">Test</p>
                             <%= raw widget.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
                         </div>
                     </div>
@@ -120,7 +118,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12"> 
-                            <p class="user"><span class="icon">&#xe002;</span>@Test</p>
+                            <p class="user">Test</p>
                             <%= raw widget.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
                         </div>
                     </div>

@@ -6,7 +6,7 @@
 
 body
 {
-	background:#1D2127;
+	background:#EEEEEE;
 	font-family: 'Roboto', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	padding-top:50px;
@@ -96,10 +96,8 @@ a
 
 .navbar
 {
-	background:#69369C;
+	background:#5645B9;
 	border:none;
--moz-box-shadow:    0px 1px 0px 0px rgba(0,0,0,.5);
-box-shadow:         0px 1px 0px 0px rgba(0,0,0,.5);
 }
 
 .nav > li > a
@@ -109,7 +107,12 @@ box-shadow:         0px 1px 0px 0px rgba(0,0,0,.5);
 
 .navbar-brand
 {
-	padding:14px 10px;
+	padding:15px 10px;
+}
+
+.navbar-default 
+{
+	border:none;
 }
 
 .open-company-nav
@@ -120,12 +123,13 @@ box-shadow:         0px 1px 0px 0px rgba(0,0,0,.5);
 
 .navbar-default .navbar-nav > li > a
 {
-	color: #B396D4;
+	color: #FFFFFF;
+	opacity: 0.6;
 }
 
 .navbar-default .navbar-nav > li > a:hover
 {
-	background:#7542A8;
+	background:#674ECA;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus
@@ -137,14 +141,16 @@ box-shadow:         0px 1px 0px 0px rgba(0,0,0,.5);
 .navbar-default .navbar-nav > li > a:hover
 {
 	color: #FFFFFF;
+	opacity:1;
+
 }
 
 .navbar-nav > li > a {
-	padding-top: 17px;
-	padding-bottom: 17px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
-	color: #B396D4;
+	color: #FFF;
 	font-weight:500;
 }
 
@@ -200,23 +206,20 @@ display:block;
 	height:110px;
 	padding:10px;
 	display: block;
-	background:#13121A;
-	-webkit-border-bottom-right-radius: 4px;
-	-webkit-border-bottom-left-radius: 4px;
-	-moz-border-radius-bottomright: 4px;
-	-moz-border-radius-bottomleft: 4px;
-	border-bottom-right-radius: 4px;
-	border-bottom-left-radius: 4px;
+	background:#FFF;
+
+-moz-box-shadow:    0px 1px 1px 0px rgba(0,0,0,0.11);
+box-shadow:         0px 1px 1px 0px rgba(0,0,0,0.11);
 
 	a 
 	{
-		color:#fff;
+		color:#3A393C;
 		text-decoration: none;
 	}
 
 	h4
 	{
-		color:#fff;
+		color:#3A393C;
 		font-size: 15px;
 		font-weight: 500;
 		vertical-align: middle;
@@ -231,23 +234,25 @@ display:block;
 	p
 	{
 		color:#eee;
-		font-size:13px;
+		font-size:12px;
 		letter-spacing: 0.02em;
 		opacity:0.6;
-		font-weight: 500;
+		font-weight: 600;
+		background-color:#000;
+		padding:3px 5px;
+		margin:0px;
+		float:left;
+		border-radius: 3px;
 	}
 
 	.user
 	{
-		padding-left:10px;
+		margin-left:10px;
 		font-size:12px;
 		opacity:0.5;
+
 	}
 
-	.user .icon
-	{
-		font-size:11px;
-	}
 
 
 }
@@ -417,7 +422,7 @@ display:block;
 
 .sorting
 {
-	background:#13121A;
+	background:#FFFFFF;
 }
 
 .sorting .icon
@@ -432,11 +437,11 @@ display:block;
 
 .sorting ul li a
 {
-	font-size:16px;
+	font-size:15px;
 	color:#8995A8;
 	text-decoration: none;
 	background:none;
-	padding: 36px 50px 30px 0px;
+	padding: 31px 50px 30px 0px;
 	display:block;
 	margin:0px;
 	font-weight: 500;
@@ -456,6 +461,17 @@ display:block;
 	padding-left:10px;
 }
 
+.sorting .btn-new
+{
+	padding:11px 18px;
+	vertical-align: none;
+	line-height: normal;
+	background:#3AAE8E;
+	display:block;
+	font-weight: 500;
+	color:#fff;
+}
+
 .sorting ul li
 {
 	float:left;
@@ -470,6 +486,12 @@ display:block;
 {
 	float:right;
 	padding-right:0px;
+
+}
+
+.post
+{
+	padding:19px 1px !important;
 }
 
 .sorting ul li .trending:hover
