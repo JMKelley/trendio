@@ -94,7 +94,7 @@
 
             <% if user_signed_in? %>
 			  <li>
-			  <a href="#">Me</a>
+			  <a href="#"><%= current_user.username %></a>
 			  </li>
 
 			<% else %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141001182827) do
+ActiveRecord::Schema.define(:version => 20141001195730) do
 
   create_table "authorizations", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -187,6 +187,7 @@ ActiveRecord::Schema.define(:version => 20141001182827) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      :default => 0
+    t.string   "username"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
@@ -194,6 +195,7 @@ ActiveRecord::Schema.define(:version => 20141001182827) do
   add_index "users", ["invitations_count"], :name => "index_users_on_invitations_count"
   add_index "users", ["invited_by_id"], :name => "index_users_on_invited_by_id"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["username"], :name => "index_users_on_username", :unique => true
 
   create_table "widgets", :force => true do |t|
     t.string   "title"
