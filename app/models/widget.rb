@@ -3,6 +3,10 @@ class Widget < ActiveRecord::Base
   acts_as_commontable
   acts_as_taggable
 
+  belongs_to :user 
+  validates_presence_of :user
+
+
   def next
     self.class.where("id > ?", id).first
   end

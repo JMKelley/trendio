@@ -60,6 +60,11 @@
 </p>
 
 <p>
+  <b>User:</b>
+  <%= @widget.user %>
+</p>
+
+<p>
   <b>Url:</b>
   <%= @widget.url %>
 </p>
@@ -80,5 +85,8 @@
 
 <%= commontator_thread(@widget) %>
 
-<%= link_to 'Edit', edit_widget_path(@widget) %> |
-<%= link_to 'Back', widgets_path %>
+<% if can? :update, @widget %>
+    <%= link_to "Edit", edit_widget_path(@widget) %> |
+<% end %>
+
+

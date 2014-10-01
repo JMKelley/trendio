@@ -27,6 +27,8 @@ gem 'commontator', '~> 4.7.2'
 gem 'merit'
 gem 'devise_invitable', '~> 1.3.4'
 
+gem 'cancancan', '~> 1.9'
+
 gem 'embedly'
 
 gem 'markable'

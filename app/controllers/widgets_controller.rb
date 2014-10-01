@@ -41,12 +41,16 @@ class WidgetsController < ApplicationController
   # GET /widgets/1/edit
   def edit
     @widget = Widget.find(params[:id])
+    authorize! :edit, @widget
   end
 
   # POST /widgets
   # POST /widgets.json
   def create
     @widget = Widget.new(params[:widget])
+
+    @widget.user = current_user
+
 
     @widget.populate!
 
@@ -64,6 +68,7 @@ class WidgetsController < ApplicationController
   # PUT /widgets/1
   # PUT /widgets/1.json
   def update
+    authorize! :update, @widget
     @widget = Widget.find(params[:id])
 
     respond_to do |format|
@@ -81,6 +86,7 @@ class WidgetsController < ApplicationController
   # DELETE /widgets/1.json
   def destroy
     @widget = Widget.find(params[:id])
+    authorize! :destroy, @widget
     @widget.destroy
 
     respond_to do |format|
