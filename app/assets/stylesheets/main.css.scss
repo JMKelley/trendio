@@ -108,9 +108,27 @@ a
 .navbar-brand
 {
 	padding:15px 10px;
-
+	margin-left:0px;
 	overflow:hidden;
+	float:none;
 }
+
+.navbar > .container .navbar-brand
+{
+	margin-left: 0px;
+}
+
+.navbar-center
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
+  height:100%;
+}
+
 
 .navbar-brand img
 {
@@ -120,7 +138,7 @@ a
 			  transition: all 0.3s ease-in-out;
 }
 
-.navbar-brand:hover img
+.navbar-brand a:hover img
 {
 	margin-top: -55px;
 }
@@ -369,23 +387,24 @@ box-shadow:         0px 1px 1px 0px rgba(0,0,0,0.11);
 
 .introduction
 {
-	background-color:#300E56;
+	background-color:#FFFFFf;
 	padding:60px 20px;
 	position:relative;
 	overflow:hidden;
+	border-bottom: 1px solid #E1E1E1;
 }
 
 .introduction h1
 {
-	color:#fff;
-	font-weight: 500;
-	font-size:38px;
+	color:#47464A;
+	font-weight: 300;
+	font-size:32px;
 	padding-bottom:10px;
 }
 
 .introduction p
 {
-	color:#A497B3;
+	color:#8995A8;
 	font-size:16px;
 	line-height:26px;
 }
@@ -427,7 +446,6 @@ box-shadow:         0px 1px 1px 0px rgba(0,0,0,0.11);
 .introduction .btn
 {
 	margin-top:50px;
-	float:right;
 	padding:14px 24px;
 	font-size: 15px;
 	font-weight: 500;
