@@ -49,7 +49,8 @@ class WidgetsController < ApplicationController
   def create
     @widget = Widget.new(params[:widget])
 
-    @widget.user = current_user.username
+    @widget.user = current_user
+    @widget.username = current_user.username
 
 
     @widget.populate!

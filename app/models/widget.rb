@@ -1,5 +1,5 @@
 class Widget < ActiveRecord::Base
-  attr_accessible :content, :ident, :source, :title, :media, :url, :tag_list, :thumb
+  attr_accessible :content, :ident, :source, :title, :media, :url, :tag_list, :thumb, :username
   acts_as_commontable
   acts_as_taggable
 
