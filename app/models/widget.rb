@@ -31,6 +31,8 @@ class Widget < ActiveRecord::Base
   	self.content = case media
   	when "video"
   		widget.html
+    when "rich"
+      widget.html
   	when "image"
   	when "photo"
   		widget.url

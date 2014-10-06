@@ -59,15 +59,16 @@
         <% if widget.media == "photo" %>
             
         <div class="item">
-
             <%= link_to widget_path(widget) do %>
+
+
             <div class="img-container">
-                <img src="<%= widget.content %>">
+                <img style="background-image:url(<%= widget.content %>)">
             </div>
         <% end %>
 
 
-
+        <!--
                 <div class="information">
                     <div class="row">
                         <div class="col-md-12 title">
@@ -81,7 +82,7 @@
                         </div>
                     </div>
                 </div>
-            
+           --> 
 
             <!--<div class="social-links">
                 <a data-toggle="tooltip" data-placement="bottom" title="Add to bucket" class="btn btn-social btn-bucket"><span class="icon">a</span></a>
@@ -99,8 +100,44 @@
 
         <div class="item">
             <%= link_to widget_path(widget) do %>
+
+
             <div class="img-container">
-                <img src="<%= widget.thumb %>">
+                <img style="background-image:url(<%= widget.thumb %>)">
+            </div>
+
+            <div class="information">
+                <div class="row">
+                        <div class="col-md-12 title">
+                            <h4><%= widget.title %></h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7"> 
+                            <p class="user"><img class="avatar"/><%= widget.username %></p>
+                        </div>
+                        <div class="col-md-5 text-right"> 
+                            <p class="comment-count"><span class="icon">p</span>182</p>
+                            <p class="love-count"><span class="icon">n</span>672</p>
+                        </div>
+                </div>
+            </div>
+
+
+
+
+            <% end %>
+        
+        </div>
+
+        <% end %>
+
+        <% if widget.media == "rich" %>
+
+        <div class="item">
+            <%= link_to widget_path(widget) do %>
+            <div class="img-container">
+                <img style="background-image:<%= widget.thumb %>">
             </div>
             <% end %>
 
