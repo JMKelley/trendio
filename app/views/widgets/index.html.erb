@@ -59,74 +59,116 @@
         <% if widget.media == "photo" %>
             
         <div class="item">
+
+            <div class="widget-user">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div class="col-md-2">
+                            <div class="widget-user-avatar">
+                            </div>
+                        </div>
+
+                        <div class="col-md-10">
+                            <h2><%= widget.username %></h2>
+                            <p>12mins Ago</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
             <%= link_to widget_path(widget) do %>
 
 
             <div class="img-container">
-                <img style="background-image:url(<%= widget.content %>)">
+                <h3><%= widget.title %></h3>
+                <img src="<%= widget.thumb %>">
             </div>
-        <% end %>
 
+            <% end %>
 
-        <!--
-                <div class="information">
+            <div class="widget-info">
+                <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-12 title">
-                            <h4><%= widget.title %></h4>
+
+                        <div class="col-md-3">
+                            <div class="widget-post-source">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12"> 
-                            <p class="user"><%= widget.username %></p>
-                            <%= raw widget.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+
+                        <div class="col-md-9">
+                            <div class="widget-post-stats">
+                                <p class="comment-icon"><span class="icon">p</span>562</p>
+                                <p class="heart-icon"><span class="icon">n</span>1,262</p>
+                            </div>
+
                         </div>
+
                     </div>
                 </div>
-           --> 
-
-            <!--<div class="social-links">
-                <a data-toggle="tooltip" data-placement="bottom" title="Add to bucket" class="btn btn-social btn-bucket"><span class="icon">a</span></a>
-                <a class="btn btn-social btn-share"><span class="icon">+</span></a>
             </div>
 
-            <div class="overlay">
-            </div>
-            -->
+
+           
+
+
+
+
         </div>
 
         <% end %>
 
         <% if widget.media == "video" %>
+        <div class="item video-item">
 
-        <div class="item">
-            <%= link_to widget_path(widget) do %>
-
-
-            <div class="img-container">
-                <img style="background-image:url(<%= widget.thumb %>)">
-            </div>
-
-            <div class="information">
-                <div class="row">
-                        <div class="col-md-12 title">
-                            <h4><%= widget.title %></h4>
-                        </div>
-                    </div>
+        <div class="widget-user">
+                <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-7"> 
-                            <p class="user"><img class="avatar"/><%= widget.username %></p>
+
+                        <div class="col-md-2">
+                            <div class="widget-user-avatar">
+                            </div>
                         </div>
-                        <div class="col-md-5 text-right"> 
-                            <p class="comment-count"><span class="icon">p</span>182</p>
-                            <p class="love-count"><span class="icon">n</span>672</p>
+
+                        <div class="col-md-10">
+                            <h2><%= widget.username %></h2>
+                            <p>12mins Ago</p>
                         </div>
+
+                    </div>
                 </div>
             </div>
 
-
-
+            <%= link_to widget_path(widget) do %>
+                
+                <div class="video-container">  
+                    <h3><%= widget.title %></h3>
+                    <div class="video" style="background-image:url('<%= widget.thumb %>')"></div>
+                </div>
 
             <% end %>
+
+            <div class="widget-info">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <div class="widget-post-source">
+                            </div>
+                        </div>
+
+                        <div class="col-md-9">
+                            <div class="widget-post-stats">
+                                <p class="comment-icon"><span class="icon">p</span>562</p>
+                                <p class="heart-icon"><span class="icon">n</span>1,262</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         
         </div>
 
@@ -135,35 +177,52 @@
         <% if widget.media == "rich" %>
 
         <div class="item">
-            <%= link_to widget_path(widget) do %>
-            <div class="img-container">
-                <img style="background-image:<%= widget.thumb %>">
-            </div>
-            <% end %>
+            <div class="widget-user">
+                    <div class="container-fluid">
+                        <div class="row">
 
-                <div class="information">
-                    <div class="row">
-                        <div class="col-md-12 title">
-                            <h4><%= widget.title %></h4>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12"> 
-                            <p class="user"><%= widget.username %></p>
-                            <%= raw widget.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+                            <div class="col-md-2">
+                                <div class="widget-user-avatar">
+                                </div>
+                            </div>
+
+                            <div class="col-md-10">
+                                <h2><%= widget.username %></h2>
+                                <p>12mins Ago</p>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-            
+            <%= link_to widget_path(widget) do %>
+            <div class="rich-container">
+                <%= raw widget.content %>
+            </div>
+            <% end %>
 
-            <div class="social-links">
-                <a data-toggle="tooltip" data-placement="bottom" title="Add to bucket" class="btn btn-social btn-bucket"><span class="icon">a</span></a>
-                <a class="btn btn-social btn-share"><span class="icon">+</span></a>
+            <div class="widget-info">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <div class="widget-post-source">
+                            </div>
+                        </div>
+
+                        <div class="col-md-9">
+                            <div class="widget-post-stats">
+                                <p class="comment-icon"><span class="icon">p</span>562</p>
+                                <p class="heart-icon"><span class="icon">n</span>1,262</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
-            <div class="overlay">
-            </div>
         </div>
+
 
         <% end %>
 
@@ -184,10 +243,10 @@
     
 <br />
 
-<!-- <script>
+<script>
     $("#grid").gridalicious({
-      gutter: 10,
-      width: 250,
+      gutter: 30,
+      width: 290,
       animate: true,
       animationOptions: {
         queue: true,
@@ -197,7 +256,6 @@
       }
     });
 </script>
--->
 
 
 
