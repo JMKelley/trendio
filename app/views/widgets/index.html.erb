@@ -72,7 +72,9 @@
 
                         <div class="col-sm-6">
                             <h2><%= widget.username %></h2>
-                            <p class="rank">Pro</p>
+                            <p class="rank">
+                                <%= widget.user.points %>
+                            </p>
                         </div>
 
                         <div class="col-sm-4">
@@ -142,7 +144,7 @@
 
                         <div class="col-sm-6">
                             <h2><%= widget.username %></h2>
-                            <p class="rank">Pro</p>
+                            <p class="rank"><%= widget.user.points %></p>
                         </div>
 
                         <div class="col-sm-4">
@@ -202,7 +204,7 @@
 
                         <div class="col-md-6">
                             <h2><%= widget.username %></h2>
-                            <p class="rank">Pro</p>
+                            <p class="rank"><%= widget.user.points %></p>
                         </div>
 
                         <div class="col-md-4">
@@ -247,6 +249,66 @@
 
         <% end %>
 
+
+        <% if widget.media == "link" %>
+
+        <div class="item">
+            <div class="widget-user">
+                    <div class="container-fluid">
+                        <div class="row">
+
+                        <div class="col-md-2">
+                            <div class="widget-user-avatar">
+                                <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h2><%= widget.username %></h2>
+                            <p class="rank"><%= widget.user.points %></p>
+                        </div>
+
+                        <div class="col-md-4">
+                            <p class="time">12mins</p>
+                        </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            <%= link_to widget_path(widget) do %>
+            <div class="rich-container">
+                <img src="<%= widget.thumb %>">
+            </div>
+            <h3><%= widget.title %></h3>
+            <% end %>
+
+
+            <div class="widget-info">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <div class="widget-post-source">
+                            </div>
+                        </div>
+
+                        <div class="col-md-9">
+                            <div class="widget-post-stats">
+                                <p class="comment-icon"><span class="icon">p</span>562</p>
+                                <p class="heart-icon"><span class="icon">n</span>1,262</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <% end %>
 
 
     <% end %>

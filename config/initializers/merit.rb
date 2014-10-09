@@ -11,7 +11,7 @@ Merit.setup do |config|
 
   # Define :user_model_name. This model will be used to grand badge if no
   # `:to` option is given. Default is 'User'.
-  # config.user_model_name = 'User'
+  config.user_model_name = 'User'
 
   # Define :current_user_method. Similar to previous option. It will be used
   # to retrieve :user_model_name object if no `:to` option is given. Default
@@ -31,3 +31,22 @@ end
 # }].each do |attrs|
 #   Merit::Badge.create! attrs
 # end
+
+
+Merit::Badge.create!(
+  id: 1,
+  name: "new",
+  description: "New Member to Hashtagg"
+)
+
+Merit::Badge.create!(
+  id: 2,
+  name: "pro",
+  description: "Earned Over 2000 Points."
+)
+
+Merit::Badge.create!(
+  id: 3,
+  name: "epic",
+  description: "Earned Over 8000 Points."
+)
