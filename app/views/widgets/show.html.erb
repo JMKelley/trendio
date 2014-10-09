@@ -4,8 +4,9 @@
     <div class="row widget-name">
 
       <div class="col-md-9">
+        <div class="in-post-avatar" style="background-image:url('<%= @widget.user.avatar %>')"></div>
         <h2><%= @widget.title %></h2>
-        <p>Source | Comments | 20 Minutes Ago</p>
+        <p><%= @widget.source %> | Comments | 20 Minutes Ago</p>
       </div>
 
       <div class="col-md-3 function-buttons">

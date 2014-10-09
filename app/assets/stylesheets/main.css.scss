@@ -242,7 +242,7 @@ img a
 {
 	border:none;
 	position: relative;
-
+	background:#000;
 	-moz-background-clip: padding; 
 	-webkit-background-clip: padding-box;
 	background-clip: padding-box;
@@ -264,22 +264,18 @@ img a
 
 .item .video-container h3
 {
-	background:none;
-	color:rgba(0,0,0,0.8);
-	padding:20px 20px;
-	margin:0px;
-	font-size:16px;
-	font-weight:500;
-	display:block;
-	font-family: 'Helvetica Neue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	line-height: 1.4;
-	z-index: 999;
-	height:64px;
-	overflow:hidden;
-	-webkit-transition: all 0.2s ease-in-out;
-	transition: all 0.2s ease-in-out;
+	display:none;
+	color:#fff;
+	position:absolute;
+	top:0;
+	left:0;
 }
 
+
+.item .video-container:hover h3
+{
+	display:block;
+}
 
 .item .video-container:hover .video
 {
@@ -331,6 +327,21 @@ border:none;
 	background:#000;
 }
 
+
+.item .img-container h3
+{
+	display:none;
+	position:absolute;
+	top:0px;
+	left:0px;
+	color:#fff;
+}
+
+.item .img-container:hover h3
+{
+	display:block;
+}
+
 .item h3
 {
 	background:none;
@@ -345,7 +356,7 @@ border:none;
 	z-index: 999;
 	-webkit-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
-		height:64px;
+	height:64px;
 	overflow:hidden;
 }
 
@@ -362,13 +373,6 @@ border:none;
 	background:#000;
 }
 
-
-
-.item .rich-container iframe
-{
-	height:350px !important;
-	width:100%;
-}
 
 
 
@@ -457,7 +461,21 @@ border:none;
 		font-weight: normal;
 		margin-right:8px;
 	}
+}
 
+.widget-post-source
+{
+	height:18px;
+	width:18px;
+	margin:15px 8px;
+
+}
+
+.widget-post-source img
+{
+	width:auto !important;
+	height:100% !important;
+		border-radius: 4px;
 }
 
 .heart-icon:hover
@@ -664,11 +682,25 @@ border:none;
 
 .widget-name h2
 {
-	font-size: 28px;
+	font-size: 20px;
 	color: #47464A;
 	line-height: 30px;
 	font-weight: 500;
 	margin:0px 0px 10px 0px;
+}
+
+.widget-name .in-post-avatar
+{
+	height:55px !important;
+	width:55px !important;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	border:none;
+	margin: 0px;
+	border-radius: 4px;
+	float:left;
+	margin-right:15px;
 }
 
 .widget-name h2 a
@@ -929,7 +961,7 @@ border:none;
 
 .pages
 {
-	background:rgba(9, 10, 17, 0.98);
+	background:#fff;
 	position:fixed;
 	font-size:20px;
 	bottom:-100px;
@@ -944,7 +976,7 @@ border:none;
 
 .pages a
 {
-	color:#fff;
+	color:#000;
 	text-decoration: none;
 }
 

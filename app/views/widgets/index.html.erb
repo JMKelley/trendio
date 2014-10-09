@@ -92,9 +92,10 @@
 
             <div class="img-container">
                 <img src="<%= widget.thumb %>">
+                <h3><%= widget.title %></h3>
             </div>
 
-            <h3><%= widget.title %></h3>
+           
 
             <% end %>
 
@@ -104,6 +105,7 @@
 
                         <div class="col-md-3">
                             <div class="widget-post-source">
+                                <img src="<%= image_path "#{widget.source}.png" %>"/>
                             </div>
                         </div>
 
@@ -158,9 +160,10 @@
             <%= link_to widget_path(widget) do %>
                 
                 <div class="video-container">  
+                    <h3><%= widget.title %></h3>
                     <div class="video" style="background-image:url('<%= widget.thumb %>')"></div>
                 </div>
-                <h3><%= widget.title %></h3>
+                
 
             <% end %>
 
@@ -170,6 +173,7 @@
 
                         <div class="col-md-3">
                             <div class="widget-post-source">
+                                <img src="<%= image_path "#{widget.source}.png" %>"/>
                             </div>
                         </div>
 
@@ -216,10 +220,10 @@
                     </div>
                 </div>
             <%= link_to widget_path(widget) do %>
-            <div class="rich-container">
+            <div class="img-container">
+                <h3><%= widget.title %></h3>
                 <img src="<%= widget.thumb %>">
             </div>
-            <h3><%= widget.title %></h3>
             <% end %>
 
 
@@ -229,6 +233,7 @@
 
                         <div class="col-md-3">
                             <div class="widget-post-source">
+                                <img src="<%= image_path "#{widget.source}.png" %>"/>
                             </div>
                         </div>
 
@@ -290,6 +295,7 @@
 
                         <div class="col-md-3">
                             <div class="widget-post-source">
+                                <img src="<%= image_path "#{widget.source}.png" %>"/>
                             </div>
                         </div>
 
