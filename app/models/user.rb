@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_merit
+  mount_uploader :avatar, AvatarUploader
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -8,7 +10,7 @@ class User < ActiveRecord::Base
 
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :login
+  attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :login, :avatar, :avatar_cache, :remove_avatar
   # attr_accessible :title, :body
 
   # Virtual attribute for authenticating by either username or email

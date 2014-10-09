@@ -27,6 +27,11 @@ a
 	font-family: 'Roboto', sans-serif;
 }
 
+img a
+{
+	border:none;
+}
+
 /* EDITING ALERTS THAT DEVISE HAS SET */
 .alert
 {
@@ -405,6 +410,23 @@ border:none;
 		margin-top:16px;
 		float:right;
 	}
+}
+
+.item .widget-user-avatar .avatar
+{
+	height:38px !important;
+	width:38px !important;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	border:none;
+	margin-top: 15px;
+	border-radius: 4px;
+}
+
+.item .widget-user-avatar
+{
+	border:none;
 }
 
 .item .widget-post-stats
