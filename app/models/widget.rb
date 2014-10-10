@@ -27,6 +27,9 @@ class Widget < ActiveRecord::Base
   	self.source = widget.provider_name.downcase
     # Thumbnail
     self.thumb = widget.thumbnail_url
+    # Thumbnail
+    self.favicon = widget.favicon_url
+
 
   	self.content = case media
   	when "video"

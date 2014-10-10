@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141009170101) do
+ActiveRecord::Schema.define(:version => 20141010190209) do
 
   create_table "authorizations", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -210,6 +210,7 @@ ActiveRecord::Schema.define(:version => 20141009170101) do
     t.string   "thumb"
     t.integer  "user_id"
     t.string   "username"
+    t.string   "favicon"
   end
 
 end

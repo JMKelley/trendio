@@ -92,7 +92,7 @@
 
             <div class="img-container">
                 <div class="image" style="background-image:url('<%= widget.thumb %>')"></div>
-                
+
                 <div class="information">
                     <h3><%= widget.title %></h3>
                 </div>
@@ -163,7 +163,9 @@
             <%= link_to widget_path(widget) do %>
                 
                 <div class="video-container">  
-                    <h3><%= widget.title %></h3>
+                    <div class="information">
+                        <h3><%= widget.title %></h3>
+                    </div>
                     <div class="video" style="background-image:url('<%= widget.thumb %>')"></div>
                 </div>
                 
@@ -176,7 +178,7 @@
 
                         <div class="col-md-3">
                             <div class="widget-post-source">
-                                <img src="<%= image_path "#{widget.source}.png" %>"/>
+                                <img src="<%= widget.favicon %>"/>
                             </div>
                         </div>
 
@@ -224,8 +226,12 @@
                 </div>
             <%= link_to widget_path(widget) do %>
             <div class="img-container">
+
+                <div class="information">
+                    <h3><%= widget.title %></h3>
+                </div>
                 <div class="image" style="background-image:url('<%= widget.thumb %>')"></div>
-                <h3><%= widget.title %></h3>
+                
             </div>
             <% end %>
 
@@ -284,12 +290,12 @@
                         </div>
                     </div>
                 </div>
-            <%= link_to widget_path(widget) do %>
-            <div class="img-container">
-                <div class="image" style="background-image:url('<%= widget.thumb %>')"></div>
-                <div class="information">
+            <%= link_to widget.url do %>
+            <div class="link-container">
+                <div class="link-information">
                     <h3><%= widget.title %></h3>
                 </div>
+                <div class="image" style="background-image:url('<%= widget.thumb %>')"></div>
             </div>
             <% end %>
 
