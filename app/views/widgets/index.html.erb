@@ -52,7 +52,7 @@
 
 
 <div class="container">
-    <div id="grid">
+    <div id="container">
     <% @widgets.each do |widget| %>
 
 
@@ -91,8 +91,11 @@
 
 
             <div class="img-container">
-                <img src="<%= widget.thumb %>">
-                <h3><%= widget.title %></h3>
+                <div class="image" style="background-image:url('<%= widget.thumb %>')"></div>
+                
+                <div class="information">
+                    <h3><%= widget.title %></h3>
+                </div>
             </div>
 
            
@@ -105,7 +108,7 @@
 
                         <div class="col-md-3">
                             <div class="widget-post-source">
-                                <img src="<%= image_path "#{widget.source}.png" %>"/>
+                                <div src="<%= image_path "#{widget.source}.png" %>"/></div>
                             </div>
                         </div>
 
@@ -221,8 +224,8 @@
                 </div>
             <%= link_to widget_path(widget) do %>
             <div class="img-container">
+                <div class="image" style="background-image:url('<%= widget.thumb %>')"></div>
                 <h3><%= widget.title %></h3>
-                <img src="<%= widget.thumb %>">
             </div>
             <% end %>
 
@@ -282,10 +285,12 @@
                     </div>
                 </div>
             <%= link_to widget_path(widget) do %>
-            <div class="rich-container">
-                <img src="<%= widget.thumb %>">
+            <div class="img-container">
+                <div class="image" style="background-image:url('<%= widget.thumb %>')"></div>
+                <div class="information">
+                    <h3><%= widget.title %></h3>
+                </div>
             </div>
-            <h3><%= widget.title %></h3>
             <% end %>
 
 
@@ -332,6 +337,7 @@
     
 <br />
 
+<!--
 <script>
     $("#grid").gridalicious({
       gutter: 35,
@@ -345,6 +351,7 @@
       }
     });
 </script>
+-->
 
 
 
