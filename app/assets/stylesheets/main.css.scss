@@ -768,6 +768,15 @@ img a
 	color:#F6A033;
 }
 
+.trending:active { 
+    color:#F6A033;
+}
+
+.trending:active .trending .icon
+{
+	font-size: 24px;
+}
+
 .sorting ul li .commented:hover
 {
 	color:#4ACE6F;

@@ -7,7 +7,8 @@ class WidgetsController < ApplicationController
   if params[:tag]
     @widgets = Widget.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 20)
   else
-    @widgets = Widget.order('created_at DESC').paginate(:page => params[:page], :per_page => 20)
+
+    @widgets = Widget.order(order).paginate(:page => params[:page], :per_page => 20)
   end
     
     respond_to do |format|
@@ -95,4 +96,26 @@ class WidgetsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def order
+
+    ordering = case params[:order]
+    when 'newest'
+      'created_at'
+    else
+      'created_at'
+    end
+
+    ordering = case params[:order_by]
+    when 'desc'
+      ordering + ' DESC'
+    when 'asc'
+      ordering + ' ASC'
+    else
+      ordering + ' DESC'
+    end
+
+    ordering
+  end
+
 end

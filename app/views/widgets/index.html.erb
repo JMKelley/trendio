@@ -38,7 +38,9 @@
                         <a href="#" class="commented"><span class="icon">p</span>Most Commented</a>
                     </li>
                     <li>
-                        <a href="#" class="trending"><span class="icon">o</span>Newest</a>
+                        <%= link_to root_path(:order => 'newest'), class: "trending" do %>
+                          <span class="icon">o</span>Newest
+                        <% end %>
                     </li>
                     
                     <li>
@@ -65,7 +67,7 @@
 
 
             <div class="img-container">
-                <div class="image" style="background-image:url('<%= widget.thumb %>')"></div>
+                <div class="image" style="background-image:url('<%= widget.content %>')"></div>
 
                 <div class="information">
                     <h3><%= widget.title %></h3>
@@ -202,12 +204,13 @@
 
         <div class="item">
 
-            <%= link_to widget.url do %>
-            <div class="link-container">
-                <div class="link-information">
+            <%= link_to widget.url, target: "_blank" do %>
+            <div class="img-container">
+                <div class="image" style="background-image:url('<%= widget.thumb %>')"></div>
+
+                <div class="information">
                     <h3><%= widget.title %></h3>
                 </div>
-                <div class="image" style="background-image:url('<%= widget.thumb %>')"></div>
             </div>
             <% end %>
 
