@@ -92,7 +92,7 @@
 
                         <div class="col-md-4">
                             <div class="widget-post-stats">
-                            <% if current_user.voted_for? widget %>
+                            <% if current_user && current_user.voted_for?(widget) %>
                                 <p class="heart-icon-liked"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% else %>
                                 <p class="heart-icon"><span class="icon">n</span><%= widget.get_likes.size %></p>
@@ -143,12 +143,17 @@
                             <div class="widget-user-avatar">
                                 <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
                             </div>
-                            <h2><%= widget.username %></h2>
+                            <h2><a href="/users/<%= widget.user.id %>"><%= widget.username %></a></h2>
                         </div>
 
                         <div class="col-md-4">
                             <div class="widget-post-stats">
-                                <p class="heart-icon"><span class="icon">n</span>1,262</p>
+                            <% if current_user && current_user.voted_for?(widget) %>
+                                <p class="heart-icon-liked"><span class="icon">n</span><%= widget.get_likes.size %></p>
+                            <% else %>
+                                <p class="heart-icon"><span class="icon">n</span><%= widget.get_likes.size %></p>
+                            <% end %>
+
                             </div>
 
                         </div>
@@ -187,12 +192,17 @@
                             <div class="widget-user-avatar">
                                 <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
                             </div>
-                            <h2><%= widget.username %></h2>
+                            <h2><a href="/users/<%= widget.user.id %>"><%= widget.username %></a></h2>
                         </div>
 
                         <div class="col-md-4">
                             <div class="widget-post-stats">
-                                <p class="heart-icon"><span class="icon">n</span>1,262</p>
+                            <% if current_user && current_user.voted_for?(widget) %>
+                                <p class="heart-icon-liked"><span class="icon">n</span><%= widget.get_likes.size %></p>
+                            <% else %>
+                                <p class="heart-icon"><span class="icon">n</span><%= widget.get_likes.size %></p>
+                            <% end %>
+
                             </div>
 
                         </div>
@@ -231,12 +241,17 @@
                             <div class="widget-user-avatar">
                                 <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
                             </div>
-                            <h2><%= widget.username %></h2>
+                            <h2><a href="/users/<%= widget.user.id %>"><%= widget.username %></a></h2>
                         </div>
 
                         <div class="col-md-4">
                             <div class="widget-post-stats">
-                                <p class="heart-icon"><span class="icon">n</span>1,262</p>
+                            <% if current_user && current_user.voted_for?(widget) %>
+                                <p class="heart-icon-liked"><span class="icon">n</span><%= widget.get_likes.size %></p>
+                            <% else %>
+                                <p class="heart-icon"><span class="icon">n</span><%= widget.get_likes.size %></p>
+                            <% end %>
+
                             </div>
 
                         </div>

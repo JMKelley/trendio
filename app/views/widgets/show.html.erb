@@ -10,8 +10,7 @@
       </div>
 
       <div class="col-md-3 function-buttons">
-
-      <% if current_user.voted_for? @widget %>
+      <% if current_user && current_user.voted_for?(@widget) %>
             <%= link_to ("<span class='icon'>n</span> Unlike").html_safe, unlike_widget_path(@widget), class: "btn btn-love", method: :put %>
       <% else %>
             <%= link_to ("<span class='icon'>n</span> Like").html_safe, like_widget_path(@widget), class: "btn btn-love", method: :put %>  
