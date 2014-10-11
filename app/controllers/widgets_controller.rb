@@ -7,7 +7,7 @@ class WidgetsController < ApplicationController
   if params[:tag]
     @widgets = Widget.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 20)
   else
-    @widgets = Widget.paginate(:page => params[:page], :per_page => 20)
+    @widgets = Widget.order('created_at DESC').paginate(:page => params[:page], :per_page => 20)
   end
     
     respond_to do |format|

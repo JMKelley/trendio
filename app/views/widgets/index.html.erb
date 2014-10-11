@@ -60,32 +60,6 @@
             
         <div class="item">
 
-            <div class="widget-user">
-                <div class="container-fluid">
-                    <div class="row">
-
-                        <div class="col-sm-2">
-                            <div class="widget-user-avatar">
-                                <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <h2><%= widget.username %></h2>
-                            <p class="rank">
-                                <%= widget.user.points %>
-                            </p>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <p class="time">12mins</p>
-                        </div>
-
-                         
-
-                    </div>
-                </div>
-            </div>
 
             <%= link_to widget_path(widget) do %>
 
@@ -106,15 +80,15 @@
                 <div class="container-fluid">
                     <div class="row">
 
-                        <div class="col-md-3">
-                            <div class="widget-post-source">
-                                <div src="<%= image_path "#{widget.source}.png" %>"/></div>
+                        <div class="col-sm-8">
+                            <div class="widget-user-avatar">
+                                <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
                             </div>
+                            <h2><%= widget.username %></h2>
                         </div>
 
-                        <div class="col-md-9">
+                        <div class="col-md-4">
                             <div class="widget-post-stats">
-                                <p class="comment-icon"><span class="icon">p</span>562</p>
                                 <p class="heart-icon"><span class="icon">n</span>1,262</p>
                             </div>
 
@@ -137,34 +111,14 @@
         <% if widget.media == "video" %>
         <div class="item video-item">
 
-        <div class="widget-user">
-                <div class="container-fluid">
-                    <div class="row">
-
-                        <div class="col-sm-2">
-                            <div class="widget-user-avatar">
-                                <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <h2><%= widget.username %></h2>
-                            <p class="rank"><%= widget.user.points %></p>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <p class="time">12mins</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
 
             <%= link_to widget_path(widget) do %>
                 
                 <div class="video-container">  
+                    <div class="play-video"><div class="symbol-play"></div></div>
                     <div class="information">
                         <h3><%= widget.title %></h3>
+                        <p><%= widget.source %></p>
                     </div>
                     <div class="video" style="background-image:url('<%= widget.thumb %>')"></div>
                 </div>
@@ -176,15 +130,16 @@
                 <div class="container-fluid">
                     <div class="row">
 
-                        <div class="col-md-3">
-                            <div class="widget-post-source">
-                                <img src="<%= widget.favicon %>"/>
+
+                        <div class="col-sm-8">
+                            <div class="widget-user-avatar">
+                                <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
                             </div>
+                            <h2><%= widget.username %></h2>
                         </div>
 
-                        <div class="col-md-9">
+                        <div class="col-md-4">
                             <div class="widget-post-stats">
-                                <p class="comment-icon"><span class="icon">p</span>562</p>
                                 <p class="heart-icon"><span class="icon">n</span>1,262</p>
                             </div>
 
@@ -201,29 +156,7 @@
         <% if widget.media == "rich" %>
 
         <div class="item">
-            <div class="widget-user">
-                    <div class="container-fluid">
-                        <div class="row">
 
-                        <div class="col-md-2">
-                            <div class="widget-user-avatar">
-                                <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <h2><%= widget.username %></h2>
-                            <p class="rank"><%= widget.user.points %></p>
-                        </div>
-
-                        <div class="col-md-4">
-                            <p class="time">12mins</p>
-                        </div>
-
-
-                        </div>
-                    </div>
-                </div>
             <%= link_to widget_path(widget) do %>
             <div class="img-container">
 
@@ -240,15 +173,16 @@
                 <div class="container-fluid">
                     <div class="row">
 
-                        <div class="col-md-3">
-                            <div class="widget-post-source">
-                                <img src="<%= image_path "#{widget.source}.png" %>"/>
+
+                        <div class="col-sm-8">
+                            <div class="widget-user-avatar">
+                                <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
                             </div>
+                            <h2><%= widget.username %></h2>
                         </div>
 
-                        <div class="col-md-9">
+                        <div class="col-md-4">
                             <div class="widget-post-stats">
-                                <p class="comment-icon"><span class="icon">p</span>562</p>
                                 <p class="heart-icon"><span class="icon">n</span>1,262</p>
                             </div>
 
@@ -267,29 +201,7 @@
         <% if widget.media == "link" %>
 
         <div class="item">
-            <div class="widget-user">
-                    <div class="container-fluid">
-                        <div class="row">
 
-                        <div class="col-md-2">
-                            <div class="widget-user-avatar">
-                                <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <h2><%= widget.username %></h2>
-                            <p class="rank"><%= widget.user.points %></p>
-                        </div>
-
-                        <div class="col-md-4">
-                            <p class="time">12mins</p>
-                        </div>
-
-
-                        </div>
-                    </div>
-                </div>
             <%= link_to widget.url do %>
             <div class="link-container">
                 <div class="link-information">
@@ -304,15 +216,15 @@
                 <div class="container-fluid">
                     <div class="row">
 
-                        <div class="col-md-3">
-                            <div class="widget-post-source">
-                                <img src="<%= image_path "#{widget.source}.png" %>"/>
+                        <div class="col-sm-8">
+                            <div class="widget-user-avatar">
+                                <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
                             </div>
+                            <h2><%= widget.username %></h2>
                         </div>
 
-                        <div class="col-md-9">
+                        <div class="col-md-4">
                             <div class="widget-post-stats">
-                                <p class="comment-icon"><span class="icon">p</span>562</p>
                                 <p class="heart-icon"><span class="icon">n</span>1,262</p>
                             </div>
 
