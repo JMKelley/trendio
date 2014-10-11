@@ -2,11 +2,17 @@ Trendy::Application.routes.draw do
   devise_for :users
   get 'tags/:tag', to: 'widgets#index', as: :tag
 
-  resources :widgets
+  resources :widgets do
+    member do
+      put "like", to: "widgets#like"
+      put "unlike", to: "widgets#unlike"
+    end
+  end
   
   mount Commontator::Engine => '/commontator'
 
   resource :buckets, except: [:new, :edit, :show, :update]
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

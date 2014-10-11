@@ -10,7 +10,12 @@
       </div>
 
       <div class="col-md-3 function-buttons">
-            <a href="#" class="btn btn-love"><span class="icon">a</span>Save to Bucket</a>
+
+      <% if current_user.voted_for? @widget %>
+            <%= link_to ("<span class='icon'>n</span> Unlike").html_safe, unlike_widget_path(@widget), class: "btn btn-love", method: :put %>
+      <% else %>
+            <%= link_to ("<span class='icon'>n</span> Like").html_safe, like_widget_path(@widget), class: "btn btn-love", method: :put %>  
+      <% end %>
             <a href="#" class="btn btn-facebook"><span class="icon">a</span></a>
             <a href="#" class="btn btn-twitter"><span class="icon">a</span></a>
       </div>

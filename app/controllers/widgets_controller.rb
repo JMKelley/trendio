@@ -5,10 +5,10 @@ class WidgetsController < ApplicationController
   def index
 
   if params[:tag]
-    @widgets = Widget.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 20)
+    @widgets = Widget.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 22)
   else
 
-    @widgets = Widget.order(order).paginate(:page => params[:page], :per_page => 20)
+    @widgets = Widget.order(order).paginate(:page => params[:page], :per_page => 22)
   end
     
     respond_to do |format|
@@ -97,6 +97,21 @@ class WidgetsController < ApplicationController
     end
   end
 
+  def like
+    @widget = Widget.find(params[:id])
+    @widget.liked_by current_user
+    redirect_to @widget
+  end
+
+
+  def unlike
+    @widget = Widget.find(params[:id])
+    @widget.unliked_by current_user
+    redirect_to @widget
+  end
+
+  
+
   def order
 
     ordering = case params[:order]
@@ -117,5 +132,7 @@ class WidgetsController < ApplicationController
 
     ordering
   end
+
+  
 
 end

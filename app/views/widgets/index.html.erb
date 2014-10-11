@@ -91,7 +91,12 @@
 
                         <div class="col-md-4">
                             <div class="widget-post-stats">
-                                <p class="heart-icon"><span class="icon">n</span>1,262</p>
+                            <% if current_user.voted_for? widget %>
+                                <p class="heart-icon-liked"><span class="icon">n</span><%= widget.get_likes.size %></p>
+                            <% else %>
+                                <p class="heart-icon"><span class="icon">n</span><%= widget.get_likes.size %></p>
+                            <% end %>
+
                             </div>
 
                         </div>
@@ -250,9 +255,11 @@
     </div>
 </div>
 
-    <div class="pages">
-        <div class="col-md-12">
-            <%= will_paginate @widgets, :page_links => false %>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <%= will_paginate @widgets, :page_links => false %>
+            </div>
         </div>
     </div>
     

@@ -566,6 +566,17 @@ img a
 		font-size:17px;
 		font-weight: normal;
 		margin-right:6px;
+		color:#A4A4A4;
+	}
+
+	.heart-icon-liked
+	{
+		color:#EF5390;
+	}
+
+	.heart-icon
+	{
+		color:#A4A4A4;
 	}
 
 	.comment-icon .icon
@@ -592,6 +603,11 @@ img a
 }
 
 .heart-icon:hover
+{
+	color:#EF5390 !important;
+}
+
+.heart-icon:hover .icon
 {
 	color:#EF5390 !important;
 }
@@ -1083,11 +1099,9 @@ img a
 
 .pages
 {
-	background:#fff;
+	
 	position:fixed;
 	font-size:20px;
-	bottom:-100px;
-	left:0;
 	width:100%;
 		-webkit-transition: all 500ms ease-out 0.2s;
     -moz-transition: all 500ms ease-out 0.2s;
@@ -1111,26 +1125,31 @@ img a
 	display: block;
 	padding-left: 0;
 	margin: 0px 0;
-
+	padding-top: 40px;
 }
 
 
 .pagination .previous_page
 {
-	width: 50%;
+	width: 45%;
 	display: block;
 	float: left;
 	padding:20px;
 	text-align: left;
+	background:#C2C5CC;
+	margin-right:10px;
 }
+
 
 .pagination .next_page
 {
-	width: 50%;
+	width: 45%;
 	display: block;
 	float: right;	
 	padding:20px;
 	text-align: right;
+	background:#C2C5CC;
+	margin-left:10px;
 }
 
 

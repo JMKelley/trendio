@@ -28,6 +28,10 @@ module Merit
         'commontator/comments#new',
         'widgets#create'
       ]
+
+      score 15, :on => [
+        'widgets#like',
+      ]
     end
   end
 end

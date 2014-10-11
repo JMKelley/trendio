@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_merit
   mount_uploader :avatar, AvatarUploader
-
+  acts_as_voter
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
