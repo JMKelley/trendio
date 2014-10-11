@@ -1152,5 +1152,52 @@ img a
 	margin-left:10px;
 }
 
+/* USER PROFILE PAGE STYLES */
 
+.profile-top
+{
+	background:#fff;
+}
 
+.profile-user-avatar
+{
+	width:130px;
+	height:130px;
+	border-radius:200px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	margin:auto;
+	margin-top:30px;
+}
+
+.profile-top p
+{
+	font-size:28px;
+	font-weight:400;
+	display:table-cell;
+	vertical-align:	 middle;
+}
+
+.profile-top .icon
+{
+	font-size:60px;
+}
+
+.profile-top .user-likes
+{
+	height:250px;
+	display:table;
+	text-align: center;
+	width:100%;
+	color:#EF5390;
+}
+
+.profile-top .user-points
+{
+	height:250px;
+	display:table;
+	width:100%;
+	color:#3498db;
+	text-align: center;
+}

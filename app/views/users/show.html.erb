@@ -1,62 +1,37 @@
-<div class="container-fluid">
-
-    <!-- START OF INTRODUCTION BOX -->
-<% if user_signed_in? %>
-
-<% else %>
-    <div class="row introduction">
-        <div class='container'>
-        <div class="col-md-12">
-            <div class="row">
-
-                <div class="col-md-6 col-md-offset-3 text-center">
-                    <h1>Welcome to your New Home</h1>
-                    <p>Get up-to-date with all the latest trends from around the world, get ready to replace your favourite website.</p>
-                    <%= link_to "Sign up for Trendly", new_user_registration_path, class: "btn btn-primary"  %>
-                </div>
-
-
-            </div>
-        </div>
-        </div>
-    </div>
-<% end %>
-</div>
-
-<!-- END OF INTRODUCTION BOX -->
-
-<div class="container-fluid sorting">
-    <!-- START OF SORTING BAR -->
+<div class="profile-top">
     <div class="row">
-        <div class="container">
-            <div class="col-md-12">
-                <ul class="clearfix">
-                    <li>
-                        <a href="#" class="editor"><span class="icon">n</span>Most Popular</a>
-                    </li>
-                    <li>
-                        <a href="#" class="commented"><span class="icon">p</span>Most Commented</a>
-                    </li>
-                    <li>
-                        <%= link_to root_path(:order => 'newest'), class: "trending" do %>
-                          <span class="icon">o</span>Newest
-                        <% end %>
-                    </li>
-                    
-                    <li>
-                        <%= link_to "New Article", new_widget_path, class: "btn btn-new"  %>
-                    </li>
-                </ul>
+
+        <div class="col-md-4 text-center">
+            <div class="user-likes">
+                <p><span class="icon">n</span><%= @user.find_liked_items.count %></p>
             </div>
         </div>
+
+        <div class="col-md-4 text-center">
+            <div class="profile-user-avatar" style="background-image:url('<%= @user.avatar %>')">
+            </div>
+            <h2><%= @user.username %></h2>
+        </div>
+
+        <div class="col-md-4 text-center">
+            <div class="user-points">
+                <p><span class="icon">H</span><%= @user.points %></p>
+            </div>
+        </div>
+
     </div>
+
+
 </div>
+
 
 
 <div class="container">
-    <div id="container">
-    <% @widgets.each do |widget| %>
 
+
+    <div id="container">
+
+<% @user.find_liked_items.each do |widget| %>
 
         <% if widget.media == "photo" %>
             
@@ -87,12 +62,12 @@
                             <div class="widget-user-avatar">
                                 <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
                             </div>
-                            <h2><a href="/users/<%= widget.user.id %>"><%= widget.username %></a></h2>
+                            <h2><%= widget.username %></h2>
                         </div>
 
                         <div class="col-md-4">
                             <div class="widget-post-stats">
-                            <% if current_user.voted_for? widget %>
+                            <% if current_user && current_user.voted_for?(widget) %>
                                 <p class="heart-icon-liked"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% else %>
                                 <p class="heart-icon"><span class="icon">n</span><%= widget.get_likes.size %></p>
@@ -243,48 +218,12 @@
 
                     </div>
                 </div>
-            </div>
-
-        </div>
 
 
         <% end %>
 
 
     <% end %>
+       </div>
 
-
-
-    </div>
 </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <%= will_paginate @widgets, :page_links => false %>
-            </div>
-        </div>
-    </div>
-    
-<br />
-
-<!--
-<script>
-    $("#grid").gridalicious({
-      gutter: 35,
-      width: 335,
-      animate: true,
-      animationOptions: {
-        queue: true,
-        speed: 200,
-        duration: 300,
-        effect: 'fadeInOnAppear',
-      }
-    });
-</script>
--->
-
-
-
-<%= link_to 'New Widget', new_widget_path %>
-
