@@ -24,7 +24,13 @@ $( document ).ready(function() {
 
 
 $(document).ready(function() {
-  
+
+    $('.item .widget-info p').each(function() {
+        var $this = $(this);
+        if($this.html().replace(/\s|&nbsp;/g, '').length == 0)
+            $this.remove();
+    });
+      
     $("body").tooltip({ selector: '[data-toggle=tooltip]' });
     $("#mascot").addClass("mascot-animate"); 
     $("#mascot-icons").addClass("mascot-icons-animate"); 

@@ -1,5 +1,5 @@
 class Widget < ActiveRecord::Base
-  attr_accessible :content, :ident, :source, :title, :media, :url, :tag_list, :thumb, :username
+  attr_accessible :content, :ident, :source, :title, :media, :url, :tag_list, :thumb, :username, :description
   acts_as_commontable
   acts_as_taggable
   acts_as_votable
@@ -21,7 +21,7 @@ class Widget < ActiveRecord::Base
   	widget = data[0]
 
     # Content of the title "Miley Cyrus Twerks"
-  	self.title = widget.title
+  	self.title = widget.title if self.title == nil || self.title == ""
     # Photo, Video, Audio
   	self.media = widget.type
     # Vine, Instagram, Vimeo
@@ -30,6 +30,8 @@ class Widget < ActiveRecord::Base
     self.thumb = widget.thumbnail_url
     # Thumbnail
     self.favicon = widget.favicon_url
+    # Description
+    self.description = widget.description if self.description == nil || self.description == ""
 
 
   	self.content = case media
