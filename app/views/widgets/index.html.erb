@@ -32,7 +32,9 @@
             <div class="col-md-12">
                 <ul class="clearfix">
                     <li>
-                        <a href="#" class="editor"><span class="icon">n</span>Most Popular</a>
+                        <%= link_to root_path(:order => 'popular'), class: "editor" do %>
+                          <span class="icon">n</span>Most Popular
+                        <% end %>
                     </li>
                     <li>
                         <a href="#" class="commented"><span class="icon">p</span>Most Commented</a>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141016202525) do
+ActiveRecord::Schema.define(:version => 20141016204406) do
 
   create_table "authorizations", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -247,13 +247,28 @@ ActiveRecord::Schema.define(:version => 20141016202525) do
     t.string   "url"
     t.string   "source"
     t.string   "ident"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
     t.string   "thumb"
     t.integer  "user_id"
     t.string   "username"
     t.string   "favicon"
     t.string   "description"
+    t.integer  "cached_votes_total",      :default => 0
+    t.integer  "cached_votes_score",      :default => 0
+    t.integer  "cached_votes_up",         :default => 0
+    t.integer  "cached_votes_down",       :default => 0
+    t.integer  "cached_weighted_score",   :default => 0
+    t.integer  "cached_weighted_total",   :default => 0
+    t.float    "cached_weighted_average", :default => 0.0
   end
+
+  add_index "widgets", ["cached_votes_down"], :name => "index_widgets_on_cached_votes_down"
+  add_index "widgets", ["cached_votes_score"], :name => "index_widgets_on_cached_votes_score"
+  add_index "widgets", ["cached_votes_total"], :name => "index_widgets_on_cached_votes_total"
+  add_index "widgets", ["cached_votes_up"], :name => "index_widgets_on_cached_votes_up"
+  add_index "widgets", ["cached_weighted_average"], :name => "index_widgets_on_cached_weighted_average"
+  add_index "widgets", ["cached_weighted_score"], :name => "index_widgets_on_cached_weighted_score"
+  add_index "widgets", ["cached_weighted_total"], :name => "index_widgets_on_cached_weighted_total"
 
 end

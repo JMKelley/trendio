@@ -119,6 +119,8 @@ class WidgetsController < ApplicationController
     ordering = case params[:order]
     when 'newest'
       'created_at'
+    when 'popular'
+      'cached_votes_total'
     else
       'created_at'
     end
