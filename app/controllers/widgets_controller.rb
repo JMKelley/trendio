@@ -2,6 +2,8 @@ class WidgetsController < ApplicationController
   # GET /widgets
   # GET /widgets.json
 
+  impressionist :actions=>[:show]
+
   def index
 
   if params[:tag]

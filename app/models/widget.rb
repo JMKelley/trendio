@@ -3,7 +3,8 @@ class Widget < ActiveRecord::Base
   acts_as_commontable
   acts_as_taggable
   acts_as_votable
-
+  is_impressionable
+  
   belongs_to :user 
   validates_presence_of :user
 

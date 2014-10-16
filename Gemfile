@@ -31,6 +31,8 @@ gem 'cancancan', '~> 1.9'
 
 gem 'embedly'
 
+gem 'impressionist'
+
 gem 'markable'
 gem 'will_paginate', '~> 3.0.5'
 gem 'acts-as-taggable-on', '~> 3.4'
