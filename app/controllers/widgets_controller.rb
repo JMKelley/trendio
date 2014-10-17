@@ -9,12 +9,12 @@ class WidgetsController < ApplicationController
   if params[:tag]
     @widgets = Widget.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 22)
   else
-
-    @widgets = Widget.order(order).paginate(:page => params[:page], :per_page => 22)
+    @widgets = Widget.order(order).paginate(:page => params[:page], :per_page => 20)
   end
     
     respond_to do |format|
       format.html # index.html.erb
+      format.js # index.js.erb
       format.json { render json: @widgets }
     end
   end

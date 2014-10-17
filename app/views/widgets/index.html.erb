@@ -54,16 +54,15 @@
     </div>
 </div>
 
+<div class="container">
+    <div id="container">
 
 <%= render 'layouts/feed' %>
 
+    </div>
+</div>
 
-
-<% unless @widgets.current_page == @widgets.total_pages %>
-  <p id="view-more">
-    <%= link_to('View More', url_for(page: @widgets.current_page + 1)) %>
-  </p>
-<% end %>
+<%= will_paginate @widgets %>
 
 <!--
     <div class="container">

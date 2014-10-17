@@ -1,7 +1,4 @@
-$('#container').append("<%=j render(partial: 'layouts/feed', format: 'html') %>");
+//$('#container').append("<%=j render(partial: 'layouts/feed', format: 'html') %>");
+$('.pagination').replaceWith('<%= escape_javascript will_paginate(@widgets) %>');
 
-<% if @widgets.current_page == @widgets.total_pages %>
-  $('#view-more').remove();
-<% else %>
-  $('#view-more a').attr('href', '<%= url_for(page: @widgets.current_page + 1) %>');
-<% end %>
+$('#container').gridalicious('append', $("<%=j render(partial: 'layouts/feed', format: 'html') %>"));
