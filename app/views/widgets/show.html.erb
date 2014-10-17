@@ -29,19 +29,19 @@
   <div class="row">
 
   <% if @widget.media == "photo" %>
-    <div class="col-md-12 content text-center">
+    <div class="col-md-8 text-center">
             <img src="<%= @widget.content %>" id="show-image" class="image"/>
     </div>
   <% end %>
 
   <% if @widget.media == "video" %>
-    <div class="col-md-12 content text-center">
+    <div class="col-md-8 content text-center">
             <%= raw @widget.content %>
     </div>
   <% end %>
 
   <% if @widget.media == "rich" %>
-    <div class="col-md-12 content text-center">
+    <div class="col-md-8 content text-center">
             <%= raw @widget.content %>
     </div>
   <% end %>

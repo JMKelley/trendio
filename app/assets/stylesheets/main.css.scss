@@ -32,6 +32,15 @@ img a
 	border:none;
 }
 
+
+/* MAIN ICON HOLDER */
+
+.png-icon img
+{
+	width:100%;
+	height:auto;
+}
+
 /* EDITING ALERTS THAT DEVISE HAS SET */
 .alert
 {
@@ -244,6 +253,21 @@ transform: translate3d(0, 0, 0);
 	font-family: 'Helvetica Neue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+
+.open-icon
+{
+	width:35px;
+	height:35px;
+	top: 43%;
+	left: 43%;
+	position: absolute;
+	display:none;
+}
+
+.item:hover .open-icon
+{
+	display:block;
+}
 
 
 
@@ -801,7 +825,7 @@ transform: translate3d(0, 0, 0);
 .content
 {
 	border-radius: 4px;
-	padding:40px;
+	padding:20px 0px 0px 20px;
 }
 
 .content img
@@ -820,12 +844,6 @@ transform: translate3d(0, 0, 0);
 {
 	width:100% !important;
 }
-
-.content iframe
-{
-	width:70%;
-}
-
 
 .widget-name .social-buttons a
 {
