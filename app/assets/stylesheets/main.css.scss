@@ -781,17 +781,17 @@ transform: translate3d(0, 0, 0);
 
 .widget-name h2
 {
-	font-size: 20px;
+	font-size: 24px;
 	color: #47464A;
 	line-height: 30px;
 	font-weight: 500;
-	margin:0px 0px 7px 0px;
+	margin:0px 0px 15px 0px;
 }
 
 .widget-name .in-post-avatar
 {
-	height:53px !important;
-	width:53px !important;
+	height:20px !important;
+	width:20px !important;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -799,7 +799,7 @@ transform: translate3d(0, 0, 0);
 	margin: 0px;
 	border-radius: 4px;
 	float:left;
-	margin-right:15px;
+	margin-right:10px;
 }
 
 .widget-name h2 a
@@ -825,7 +825,7 @@ transform: translate3d(0, 0, 0);
 .content
 {
 	border-radius: 4px;
-	padding:20px 0px 0px 20px;
+	padding:5px 0px 0px 30px;
 }
 
 .content img
@@ -833,6 +833,11 @@ transform: translate3d(0, 0, 0);
 	width:60%;
 	height:auto;
 	padding:20px 0px;
+}
+
+.content iframe
+{
+	width:100%;
 }
 
 .portrait
@@ -845,7 +850,7 @@ transform: translate3d(0, 0, 0);
 	width:100% !important;
 }
 
-.widget-name .social-buttons a
+.function-buttons .social-buttons a
 {
 	margin:22px 0px;
 	color:#fff;
@@ -907,6 +912,7 @@ transform: translate3d(0, 0, 0);
 .inpost-header
 {
 	background:#fff;
+	margin-top:20px;
 }
 
 
@@ -916,8 +922,9 @@ transform: translate3d(0, 0, 0);
 	color:#fff;
 	font-size:14px;
 	font-weight:500;
-	padding: 13px 12px;
-	float:right;
+padding: 13px 10px;
+width: 90%;
+margin: 5px 20px 0px 19px;
 }
 
 

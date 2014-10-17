@@ -1,30 +1,21 @@
   
-<div class="container-fluid inpost-header">
+<div class="container inpost-header">
   <div class="container">
     <div class="row widget-name">
 
       <div class="col-md-9">
-        <div class="in-post-avatar" style="background-image:url('<%= @widget.user.avatar %>')"></div>
         <h2><%= @widget.title %></h2>
-        <p><%= @widget.username %> </p>
+        <div class="in-post-avatar" style="background-image:url('<%= @widget.user.avatar %>')"></div><p><a href="/users/<%= @widget.user.id %>"><%= @widget.username %></a></p>
       </div>
 
       <div class="col-md-3 function-buttons">
-      <% if current_user && current_user.voted_for?(@widget) %>
-            <%= link_to ("<span class='icon'>n</span> Unlike").html_safe, unlike_widget_path(@widget), class: "btn btn-love", method: :put %>
-      <% else %>
-            <%= link_to ("<span class='icon'>n</span> Like").html_safe, like_widget_path(@widget), class: "btn btn-love", method: :put %>  
-      <% end %>
-            <a href="#" class="btn btn-facebook"><span class="icon">a</span></a>
-            <a href="#" class="btn btn-twitter"><span class="icon">a</span></a>
-            <a href="#" class="btn btn-pin"><span class="icon">a</span></a>
+
       </div>
 
     </div>
   </div>
-</div>
 
-<div class="container">
+
 
   <div class="row">
 
@@ -46,9 +37,20 @@
     </div>
   <% end %>
 
+  <div class="col-md-4 function-buttons">
 
+        <% if current_user && current_user.voted_for?(@widget) %>
+              <%= link_to ("<span class='icon'>n</span> Unlike").html_safe, unlike_widget_path(@widget), class: "btn btn-love", method: :put %>
+        <% else %>
+              <%= link_to ("<span class='icon'>n</span> Like").html_safe, like_widget_path(@widget), class: "btn btn-love", method: :put %>  
+        <% end %>
+
+        <a href="#" class="btn btn-facebook"><span class="icon">a</span></a>
+        <a href="#" class="btn btn-twitter"><span class="icon">a</span></a>
+        <a href="#" class="btn btn-pin"><span class="icon">a</span></a>
   </div>
 
+  </div>
 </div>
 
 <div class="container-fluid inpost-header">

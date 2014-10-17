@@ -23,11 +23,11 @@ class WidgetsController < ApplicationController
   # GET /widgets/1.json
   def show
     @widget = Widget.find(params[:id])
+    commontator_thread_show(@widget)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @widget }
     end
-    commontator_thread_show(@widget)
   end
 
   # GET /widgets/new
