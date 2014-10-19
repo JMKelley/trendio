@@ -35,7 +35,7 @@ Commontator.configure do |config|
   # Arguments: a user (acts_as_commontator)
   # Returns: the user's name (String)
   # Default: lambda { |user| I18n.t('commontator.anonymous') } (all users are anonymous)
-  config.user_name_proc = lambda { |user| user.email }
+  config.user_name_proc = lambda { |user| user.username }
 
   # user_link_proc
   # Type: Proc
@@ -63,9 +63,7 @@ Commontator.configure do |config|
   # Default: lambda { |user, view|
   #            view.commontator_gravatar_image_tag(
   #              user, 1, :s => 60, :d => 'mm') }
-  config.user_avatar_proc = lambda { |user, view|
-                                     view.commontator_gravatar_image_tag(
-                                       user, 1, :s => 60, :d => 'mm') }
+  config.user_avatar_proc = lambda { |user, view| user.avatar }
 
   # user_email_proc
   # Type: Proc
@@ -130,7 +128,7 @@ Commontator.configure do |config|
   #   :n (never)
   # Note: For moderators, see the next option
   # Default: :l
-  config.comment_deletion = :l
+  config.comment_deletion = :a
 
   # moderator_permissions
   # Type: Symbol
@@ -199,7 +197,7 @@ Commontator.configure do |config|
   #   :m (manual subscriptions only)
   #   :b (both automatic, when commenting, and manual)
   # Default: :n
-  config.thread_subscription = :n
+  config.thread_subscription = :a
 
   # email_from_proc
   # Type: Proc

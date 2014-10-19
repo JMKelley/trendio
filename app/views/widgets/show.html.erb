@@ -3,13 +3,21 @@
   <div class="container">
     <div class="row widget-name">
 
-      <div class="col-md-9">
-        <h2><%= @widget.title %></h2>
-        <div class="in-post-avatar" style="background-image:url('<%= @widget.user.avatar %>')"></div><p><a href="/users/<%= @widget.user.id %>"><%= @widget.username %></a></p>
+      <div class="col-md-8">
+        <div class="in-post-avatar" style="background-image:url('<%= @widget.user.avatar %>')"></div><h2><%= @widget.title %></h2>
+        <p><a href="/users/<%= @widget.user.id %>"><%= @widget.username %></a></p>
       </div>
 
-      <div class="col-md-3 function-buttons">
+      <div class="col-md-4 function-buttons">
 
+        <% if current_user && current_user.voted_for?(@widget) %>
+              <%= link_to ("<span class='icon'>n</span> Liked").html_safe, unlike_widget_path(@widget), class: "btn btn-loved", method: :put %>
+        <% else %>
+              <%= link_to ("<span class='icon'>n</span> Like").html_safe, like_widget_path(@widget), class: "btn btn-love", method: :put %>  
+        <% end %>
+
+        <%= link_to ("<span class='icon'>&#xe011;</span>Source").html_safe, @widget.url, class: "btn btn-comment"  %>
+        <a href="#" class="btn btn-twitter"><span class="icon">+</span>Share</a>
       </div>
 
     </div>
@@ -37,69 +45,37 @@
     </div>
   <% end %>
 
-  <div class="col-md-4 function-buttons">
-
-        <% if current_user && current_user.voted_for?(@widget) %>
-              <%= link_to ("<span class='icon'>n</span> Unlike").html_safe, unlike_widget_path(@widget), class: "btn btn-love", method: :put %>
-        <% else %>
-              <%= link_to ("<span class='icon'>n</span> Like").html_safe, like_widget_path(@widget), class: "btn btn-love", method: :put %>  
-        <% end %>
-
-        <a href="#" class="btn btn-facebook"><span class="icon">a</span></a>
-        <a href="#" class="btn btn-twitter"><span class="icon">a</span></a>
-        <a href="#" class="btn btn-pin"><span class="icon">a</span></a>
-  </div>
-
-  </div>
-</div>
-
-<div class="container-fluid inpost-header">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        <%= commontator_thread(@widget) %>
-      </div>
-
-      <div class="col-md-4">
-        <p>
-    <b>Title:</b>
-
-  </p>
-
-  <p>
-    <b>Type:</b>
-    <%= @widget.media %>
-  </p>
-
-  <p>
-    <b>User:</b>
-    <%= @widget.user %>
-  </p>
-
-  <p>
-    <b>Url:</b>
-    <%= @widget.url %>
-  </p>
-
-  <p>
-    <b>Source:</b>
-    <%= @widget.source %>
-  </p>
-
-  <p>
-    <b>Ident:</b>
-  </p>
-      </div>
-
+  <% if @widget.media == "link" %>
+    <div class="col-md-8 content text-center">
+         <img src="<%= @widget.thumb %>" id="show-image" class="image"/>
     </div>
+  <% end %>
+
+  <div class="col-md-4 prev-posts">
+
+    <% @widget.prev_six.each do |related| %>
+
+      <%= link_to related do %>
+        <div style="background-image:url('<%= related.thumb %>')"></div>
+      <% end %>
+
+    <% end %>
+
+  </div>
+
+
+
+  </div>
+
+
   </div>
 </div>
+
+
+
 
 <p id="notice"><%= notice %></p>
-      <div class="buttons-pages">
-        <%= link_to "Prev", @widget.prev, class: "btn btn-prev"  %>
-        <%= link_to "Next", @widget.next, class: "btn btn-next"  %>
-      </div>
+
 
 
 
@@ -108,5 +84,4 @@
 <% if can? :update, @widget %>
     <%= link_to "Edit", edit_widget_path(@widget) %> |
 <% end %>
-
 

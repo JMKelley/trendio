@@ -4,6 +4,10 @@ class UsersController < ApplicationController
 	  @user = User.find(params[:id])
 	end
 
+	def favourites
+	  @user = User.find(params[:id])
+	end
+
 
 
 end

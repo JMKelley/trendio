@@ -4,9 +4,8 @@
                        :page => @thread.new_comment_page(@per_page),
                        :per_page => @per_page} %>
 
-$("#thread_<%= @thread.id %>_new_comment_div").hide();
+// $("#thread_<%= @thread.id %>_new_comment_div").hide();
 
-$("#thread_<%= @thread.id %>_new_comment_link_span").fadeIn();
 
 $("#comment_<%= @comment.id.to_s %>_div").hide().fadeIn()[0].scrollIntoView();
 

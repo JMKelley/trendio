@@ -13,6 +13,10 @@ class Widget < ActiveRecord::Base
     self.class.where("id > ?", id).first
   end
 
+  def prev_six
+    self.class.where("id < ?", id).reverse.slice(0,6)
+  end
+
   def prev
     self.class.where("id < ?", id).last
   end

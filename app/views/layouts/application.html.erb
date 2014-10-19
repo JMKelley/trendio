@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Trendy</title>
+  <title>Hashtagg Alpha</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= stylesheet_link_tag "main", :media => "all"  %>
   <%= stylesheet_link_tag "icon-styles", :media => "all"  %>
@@ -75,7 +75,7 @@
         <% if user_signed_in? %>
 
 			  <li>
-			     <a href="#" data-toggle="tooltip" data-placement="bottom" title="My Favourites"><span class="icon">n</span>Favs</a>
+			     <a href="/users/<%= current_user.id %>/favourites" data-toggle="tooltip" data-placement="bottom" title="My Favourites"><span class="icon">n</span>Favs</a>
 			  </li>
 
         <li>

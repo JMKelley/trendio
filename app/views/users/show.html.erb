@@ -24,16 +24,12 @@
 
 </div>
 
-
-
 <div class="container">
-
-
     <div id="container">
 
-<% @user.find_liked_items.each do |widget| %>
+        <% @user.find_liked_items.each do |widget| %>
 
-        <% if widget.media == "photo" %>
+         <% if widget.media == "photo" %>
             
         <div class="item">
 
@@ -42,6 +38,9 @@
 
 
             <div class="img-container">
+                <div class="open-icon png-icon">
+                    <img src="<%= image_path "open.png" %>">
+                </div>
                 <div class="image" style="background-image:url('<%= widget.content %>')"></div>
             </div>
 
@@ -74,7 +73,6 @@
                     <div class="row">
 
                         <div class="col-md-3">
-                            <p><%= widget.source %></p>
                         </div>
                         <div class="col-md-9">
                             <div class="widget-post-stats">
@@ -84,8 +82,8 @@
                                 <p class="heart-icon"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% end %>
 
-                                <p class="comment-icon"><span class="icon">p</span>653</p>
-                                <p class="comment-icon"><span class="icon">k</span>653</p>
+                                <p class="comment-icon"><span class="icon">p</span></p>
+                                <p class="comment-icon"><span class="icon">k</span><%= widget.impressionist_count %></p>
                             </div>
 
                         </div>
@@ -109,7 +107,10 @@
 
             <%= link_to widget_path(widget) do %>
                 
-                <div class="video-container">  
+                <div class="video-container"> 
+                    <div class="open-icon png-icon">
+                        <img src="<%= image_path "play.png" %>">
+                    </div>
                     <div class="video" style="background-image:url('<%= widget.thumb %>')"></div>
                 </div>
 
@@ -149,7 +150,7 @@
                             <% end %>
 
                                 <p class="comment-icon"><span class="icon">p</span>653</p>
-                                <p class="comment-icon"><span class="icon">k</span>653</p>
+                                <p class="comment-icon"><span class="icon">k</span><%= widget.impressionist_count %></p>
                             </div>
 
                         </div>
@@ -207,7 +208,7 @@
                             <% end %>
 
                                 <p class="comment-icon"><span class="icon">p</span>653</p>
-                                <p class="comment-icon"><span class="icon">k</span>653</p>
+                                <p class="comment-icon"><span class="icon">k</span><%= widget.impressionist_count %></p>
                             </div>
 
                         </div>
@@ -227,7 +228,11 @@
         <div class="item">
 
             <%= link_to widget.url, target: "_blank" do %>
+            
             <div class="img-container">
+                <div class="open-icon png-icon">
+                    <img src="<%= image_path "link.png" %>">
+                </div>
                 <div class="image" style="background-image:url('<%= widget.thumb %>')"></div>
             </div>
 
@@ -266,8 +271,9 @@
                                 <p class="heart-icon"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% end %>
 
+                            
+
                                 <p class="comment-icon"><span class="icon">p</span>653</p>
-                                <p class="comment-icon"><span class="icon">k</span>653</p>
                             </div>
 
                         </div>
@@ -281,11 +287,18 @@
 
         <% end %>
 
+       
 
-    <% end %>
-       </div>
 
+        <% end %>
+
+
+    </div>
 </div>
+
+
+
+
 
 <script>
     $("#container").gridalicious({

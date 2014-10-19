@@ -1,39 +1,52 @@
-<%= form_for(@widget) do |f| %>
-  <% if @widget.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@widget.errors.count, "error") %> prohibited this widget from being saved:</h2>
+<div class="container-fluid widget-create">
+  <div class="background"></div>
+  <div class="row">
 
-      <ul>
-      <% @widget.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Submit Post</h1>
     </div>
-  <% end %>
-
- 
-  <div class="field">
-    <%= f.label :tag_list %><br />
-    <%= f.text_field :tag_list %>
   </div>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <p>Submit a post below, enter a URL to get started. Give your post a title and a description - if one isn't supplied we will fetch it from the site.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+     <%= form_for(@widget) do |f| %>
+
+      <% if @widget.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@widget.errors.count, "error") %> prohibited this widget from being saved:</h2>
+
+          <ul>
+          <% @widget.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+        <%= f.text_field :url, :autofocus => true, :placeholder => "http://replacethisurl.com" %>
+        <%= f.text_field :title, :placeholder => "Post Title" %>
+        <%= f.text_area :description, :placeholder => "Enter a description for this post. Be nice!" %>
+        <%= f.text_field :tag_list, :placeholder => "Give your post some tags" %>
+
+    </div>
   </div>
 
 
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
+  <div class="row">
+    <div class="col-md-12 sign-up-button">
+      <%= f.submit %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
-  </div>
+</div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

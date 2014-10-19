@@ -46,7 +46,16 @@
                     </li>
                     
                     <li>
-                        <%= link_to "New Article", new_widget_path, class: "btn btn-new"  %>
+                     <% if user_signed_in? %>
+
+                        <%= link_to "Submit Post", new_widget_path, class: "btn btn-new"  %>
+
+                    <% else %>
+
+                        <%= link_to "Register to Post", new_user_registration_path, class: "btn btn-register"  %>
+
+                    <% end %>
+                        
                     </li>
                 </ul>
             </div>
@@ -78,7 +87,7 @@
 <script>
     $("#container").gridalicious({
       gutter: 40,
-      width: 335,
+      width: 369,
       animate: true,
       animationOptions: {
         queue: true,
@@ -90,7 +99,4 @@
 </script>
 
 
-
-
-<%= link_to 'New Widget', new_widget_path %>
 

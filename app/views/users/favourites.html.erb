@@ -1,8 +1,9 @@
+<div class="container">
+    <div id="container">
 
-    <% @widgets.each do |widget| %>
+        <% @user.find_liked_items.each do |widget| %>
 
-
-        <% if widget.media == "photo" %>
+       <% if widget.media == "photo" %>
             
         <div class="item">
 
@@ -263,8 +264,29 @@
 
         <% end %>
 
-
-    <% end %>
-
+       
 
 
+        <% end %>
+
+
+    </div>
+</div>
+
+
+
+
+
+<script>
+    $("#container").gridalicious({
+      gutter: 40,
+      width: 335,
+      animate: true,
+      animationOptions: {
+        queue: true,
+        speed: 200,
+        duration: 300,
+        effect: 'fadeInOnAppear',
+      }
+    });
+</script>
