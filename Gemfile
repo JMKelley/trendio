@@ -27,6 +27,8 @@ gem 'commontator', '~> 4.9.0'
 gem 'merit'
 gem 'devise_invitable', '~> 1.3.4'
 
+gem "sass", "~> 3.2.5"
+
 gem 'cancancan', '~> 1.9'
 
 gem 'embedly'

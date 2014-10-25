@@ -126,7 +126,7 @@ GEM
       json (~> 1.4)
     responders (1.1.1)
       railties (>= 3.2, < 4.2)
-    sass (3.4.6)
+    sass (3.2.19)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -174,6 +174,7 @@ DEPENDENCIES
   pg
   rails (= 3.2.12)
   rails_12factor
+  sass (~> 3.2.5)
   sass-rails (~> 3.2.3)
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
