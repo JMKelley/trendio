@@ -6,11 +6,7 @@ class WidgetsController < ApplicationController
 
   def index
 
-  if params[:tag]
-    @widgets = Widget.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 22)
-  else
     @widgets = Widget.order(order).paginate(:page => params[:page], :per_page => 20)
-  end
     
     respond_to do |format|
       format.html # index.html.erb
