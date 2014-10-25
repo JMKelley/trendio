@@ -1,5 +1,5 @@
 class AddDescriptionToWidgets < ActiveRecord::Migration
   def change
-    add_column :widgets, :description, :string
+    add_column :widgets, :description, :text
   end
 end

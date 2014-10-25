@@ -5,8 +5,7 @@ gem 'rails', '3.2.12'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
+gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,7 +22,7 @@ end
 gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
-gem 'commontator', '~> 4.7.2'
+gem 'commontator', '~> 4.9.0'
 gem 'merit'
 gem 'devise_invitable', '~> 1.3.4'
 

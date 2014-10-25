@@ -253,7 +253,7 @@ ActiveRecord::Schema.define(:version => 20141016204406) do
     t.integer  "user_id"
     t.string   "username"
     t.string   "favicon"
-    t.string   "description"
+    t.text     "description"
     t.integer  "cached_votes_total",      :default => 0
     t.integer  "cached_votes_score",      :default => 0
     t.integer  "cached_votes_up",         :default => 0

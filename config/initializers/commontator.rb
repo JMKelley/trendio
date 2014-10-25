@@ -12,13 +12,14 @@ Commontator.configure do |config|
   # Returns: the current user (acts_as_commontator)
   # The default works for Devise and similar authentication plugins
   # Default: lambda { |controller| controller.current_user }
-  config.current_user_proc = lambda { |controller| controller.current_user }
+  config.current_user_proc = lambda { |controller| controller.current_user || User.new }
 
   # javascript_proc
   # Type: Proc
   # Arguments: a view (ActionView::Base)
   # Returns: a String that is appended to Commontator JS views
   # Can be used, for example, to display/clear Rails error messages
+  # or to reapply JQuery UI styles after Ajax calls
   # Objects visible in view templates can be accessed
   # through the view object (for example, view.flash)
   # However, the view does not include the main application's helpers
@@ -36,6 +37,7 @@ Commontator.configure do |config|
   # Returns: the user's name (String)
   # Default: lambda { |user| I18n.t('commontator.anonymous') } (all users are anonymous)
   config.user_name_proc = lambda { |user| user.username }
+  
 
   # user_link_proc
   # Type: Proc
@@ -63,7 +65,9 @@ Commontator.configure do |config|
   # Default: lambda { |user, view|
   #            view.commontator_gravatar_image_tag(
   #              user, 1, :s => 60, :d => 'mm') }
-  config.user_avatar_proc = lambda { |user, view| user.avatar }
+  config.user_avatar_proc = lambda { |user, view|
+                                     view.commontator_gravatar_image_tag(
+                                       user, 1, :s => 60, :d => 'mm') }
 
   # user_email_proc
   # Type: Proc
@@ -117,7 +121,7 @@ Commontator.configure do |config|
   #   :l (only if it's the latest comment)
   #   :n (never)
   # Default: :l
-  config.comment_editing = :l
+  config.comment_editing = :a
 
   # comment_deletion
   # Type: Symbol
@@ -178,7 +182,18 @@ Commontator.configure do |config|
   # If :l is selected, the "reply to thread" form will appear before the comments
   # Otherwise, it will appear after the comments
   # Default: :e
-  config.comment_order = :e
+  config.comment_order = :l
+
+  # new_comment_style
+  # Type: Symbol
+  # How to display the "new comment" form
+  # Valid options:
+  #   :t (always present in the thread's page)
+  #   :l (link to the form; opens in the same page using JS)
+  # Not yet implemented:
+  #   :n (link to the form; opens in a new window)
+  # Default: :l
+  config.new_comment_style = :t
 
   # comments_per_page
   # Type: Fixnum or nil
@@ -197,7 +212,7 @@ Commontator.configure do |config|
   #   :m (manual subscriptions only)
   #   :b (both automatic, when commenting, and manual)
   # Default: :n
-  config.thread_subscription = :a
+  config.thread_subscription = :n
 
   # email_from_proc
   # Type: Proc
@@ -233,4 +248,3 @@ Commontator.configure do |config|
   config.commontable_url_proc = lambda { |thread, app_routes|
     app_routes.polymorphic_url(thread.commontable) }
 end
-

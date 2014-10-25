@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  acts_as_commontator
   has_merit
   mount_uploader :avatar, AvatarUploader
   acts_as_voter
@@ -7,6 +8,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  validates :username, uniqueness: true
 
 
   # Setup accessible (or protected) attributes for your model
@@ -18,11 +21,9 @@ class User < ActiveRecord::Base
   attr_accessor :login
 
   has_many:authorizations
-  acts_as_commontator
 
   has_many :widgets, through: :buckets
   has_many :buckets
-
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
@@ -33,6 +34,5 @@ class User < ActiveRecord::Base
     end
   end
 
-
-
+  
 end
