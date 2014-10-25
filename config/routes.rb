@@ -8,8 +8,6 @@ Trendy::Application.routes.draw do
   end
 
 
-  get 'tags/:tag', to: 'widgets#index', as: :tag
-
   resources :widgets do
     member do
       put "like", to: "widgets#like"
