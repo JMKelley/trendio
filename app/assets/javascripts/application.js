@@ -16,3 +16,7 @@
 //= require_tree .
 //= require bootstrap.min
 //= require jquery.infinitescroll
+//= require infinite-scroll
+//= require jquery.grid-a-licious
+//= require imagesloaded.pkgd.min
+//= require bootstrap
