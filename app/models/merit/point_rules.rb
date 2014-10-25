@@ -17,7 +17,7 @@ module Merit
       #   user.name.present?
       # end
       #
-      # score 15, :on => 'reviews#create', :to => [:reviewer, :reviewed]
+      score 200, :on => 'widgets#like', :to => :user
       #
       # score 20, :on => [
       #   'comments#create',
