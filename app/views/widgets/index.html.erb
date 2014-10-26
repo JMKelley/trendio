@@ -1,3 +1,4 @@
+<% title "Home" %>
 <div class="container-fluid">
 
     <!-- START OF INTRODUCTION BOX -->
@@ -10,9 +11,9 @@
             <div class="row">
 
                 <div class="col-md-6 col-md-offset-3 text-center">
-                    <h1><%= @widgets.count %> Awesome Things & Counting</h1>
-                    <p>Get up-to-date with all the latest trends from around the world, get ready to replace your favourite website.</p>
-                    <%= link_to "Sign up for Trendly", new_user_registration_path, class: "btn btn-primary"  %>
+                    <h1>Share the links you love, easily</h1>
+                    <p>Hashtagg is the best way to share your favourite </br>links from across the web</p>
+                    <%= link_to "Sign up for Hashtagg", new_user_registration_path, class: "btn btn-primary"  %>
                 </div>
 
 
@@ -48,7 +49,7 @@
                     <li>
                      <% if user_signed_in? %>
 
-                        <%= link_to "Submit Post", new_widget_path, class: "btn btn-new"  %>
+                        <%= link_to "Submit Link", new_widget_path, class: "btn btn-new"  %>
 
                     <% else %>
 

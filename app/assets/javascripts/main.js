@@ -25,6 +25,8 @@ $( document ).ready(function() {
 
 $(document).ready(function() {
 
+    $('.dropdown-toggle').dropdown();
+
     $('.item .widget-info p').each(function() {
         var $this = $(this);
         if($this.html().replace(/\s|&nbsp;/g, '').length == 0)

@@ -178,6 +178,13 @@ transform: translate3d(0, 0, 0);
 	font-size:17px;
 }
 
+.open-company-nav .icon
+{
+	margin-right: 0px;
+	margin-left:10px;
+
+}
+
 .navbar-default .navbar-nav > li > a
 {
 	color: #A191FF;
@@ -209,6 +216,51 @@ transform: translate3d(0, 0, 0);
 	font-size: 13px;
 	color: #FFF;
 	font-weight:600;
+}
+
+.user-menu
+{
+	padding: 16px 17px;
+	font-family: 'Helvetica Neue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	font-weight:600;
+	color: #A191FF !important;
+	opacity: 1;
+	display:block;
+	text-decoration: none;
+	text-transform: capitalize;
+}
+
+.user-menu .caret
+{
+	margin-left:3px;
+}
+
+.user-menu:hover
+{
+	color:#fff !important;
+	background:#674ECA;
+	text-decoration: none;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus
+{
+	background:#674ECA;
+	color:#fff !important;
+	text-decoration: none;
+}
+
+.user-dropdown
+{
+	position:relative;
+}
+
+.dropdown-menu > li > a
+{
+	font-size: 13px;
+	font-weight:500;
+	padding:7px 20px;
+	color:#8995A8;
 }
 
 /* END */
@@ -601,7 +653,7 @@ transform: translate3d(0, 0, 0);
 {
 	color:#47464A;
 	font-weight: 300;
-	font-size:32px;
+	font-size:36px;
 	padding-bottom:10px;
 }
 
@@ -927,6 +979,7 @@ transform: translate3d(0, 0, 0);
 .content iframe
 {
 	width:100%;
+	height:480px;
 }
 
 .portrait
@@ -945,6 +998,19 @@ transform: translate3d(0, 0, 0);
 	color:#fff;
 	font-size:14px;
 	font-weight:500;
+}
+
+.delete-links a
+{
+	color:#000;
+	opacity:0.4;
+}
+
+.delete-links a:hover
+{
+	color:#000;
+	opacity:1;
+	background:none;
 }
 
 .widget-name .btn-next
@@ -1289,6 +1355,7 @@ transform: translate3d(0, 0, 0);
 	padding-left: 0;
 	margin: 0px 0;
 	padding-top: 40px;
+	visibility: hidden;
 }
 
 
@@ -1371,7 +1438,46 @@ transform: translate3d(0, 0, 0);
 	display:block !important;
 }
 
+.settings-avatar
+{
+	width: 130px;
+	height: 130px;
+	border-radius: 200px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	margin: auto;
+	margin-bottom: 30px;
+}
 
-/* CREATING WIDGET */
 
+.cancel-account-button input
+{
+	width:257px;
+	border-radius: 5px;
+	font-family: 'Helvetica Neue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	padding:14px 24px;
+	font-size: 15px;
+	font-weight: 500;
+	color: #FFFFFF;
+	background-color:#e74c3c;
+	border:none;
+}
 
+.close-account
+{
+	opacity:0.5;
+	margin-top:50px;
+}
+
+.close-account h4
+{
+	font-size:18px;
+	font-weight: 400;
+	padding:15px;
+}
+
+.close-account:hover
+{
+	opacity:0.8;
+}

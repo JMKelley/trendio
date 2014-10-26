@@ -49,6 +49,11 @@ GEM
     commontator (4.9.0)
       jquery-rails
       rails (>= 3.1)
+    delayed_job (4.0.4)
+      activesupport (>= 3.0, < 4.2)
+    delayed_job_active_record (4.0.2)
+      activerecord (>= 3.0, < 4.2)
+      delayed_job (>= 3.0, < 4.1)
     devise (3.4.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -64,6 +69,7 @@ GEM
       oauth
       querystring
     erubis (2.7.0)
+    excon (0.40.0)
     execjs (2.2.2)
     hike (1.2.3)
     httpclient (2.5.1)
@@ -80,6 +86,13 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mandrill-api (1.0.53)
+      excon (>= 0.16.0, < 1.0)
+      json (>= 1.7.7, < 2.0)
+    mandrill_mailer (0.4.11)
+      actionpack
+      activesupport
+      mandrill-api (~> 1.0.9)
     markable (0.1.4)
       rails (>= 3.1)
     merit (2.2.0)
@@ -164,11 +177,13 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
   commontator (~> 4.9.0)
+  delayed_job_active_record
   devise
   devise_invitable (~> 1.3.4)
   embedly
   impressionist
   jquery-rails
+  mandrill_mailer
   markable
   merit
   pg

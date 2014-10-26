@@ -8,7 +8,7 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
     can :update, Widget, user_id: user.id
-        
+    can :destroy, Widget, user_id: user.id
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.

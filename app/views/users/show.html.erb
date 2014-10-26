@@ -70,25 +70,25 @@
 
             <div class="widget-stats">
                 <div class="container-fluid">
-                    <div class="row">
 
-                        <div class="col-md-3">
-                        </div>
-                        <div class="col-md-9">
-                            <div class="widget-post-stats">
+                    <div class="row widget-post-stats">
+                        <div class="col-md-4 text-center">
                             <% if current_user && current_user.voted_for?(widget) %>
                                 <p class="heart-icon-liked"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% else %>
                                 <p class="heart-icon"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% end %>
-
-                                <p class="comment-icon"><span class="icon">p</span></p>
-                                <p class="comment-icon"><span class="icon">k</span><%= widget.impressionist_count %></p>
-                            </div>
-
                         </div>
 
+                        <div class="col-sm-4 text-center">
+                            <p class="comment-icon"><span class="icon">k</span><%= widget.impressionist_count %></p>
+                        </div>
+
+                        <div class="col-sm-4 text-center">
+                            <p class="comment-icon"><span class="icon">k</span>Share</p>
+                        </div>
                     </div>
+
                 </div>
             </div>
 
@@ -139,23 +139,25 @@
 
             <div class="widget-stats">
                 <div class="container-fluid">
-                    <div class="row">
 
-                        <div class="col-md-12">
-                            <div class="widget-post-stats">
+                    <div class="row widget-post-stats">
+                        <div class="col-md-4 text-center">
                             <% if current_user && current_user.voted_for?(widget) %>
                                 <p class="heart-icon-liked"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% else %>
                                 <p class="heart-icon"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% end %>
-
-                                <p class="comment-icon"><span class="icon">p</span>653</p>
-                                <p class="comment-icon"><span class="icon">k</span><%= widget.impressionist_count %></p>
-                            </div>
-
                         </div>
 
+                        <div class="col-sm-4 text-center">
+                            <p class="comment-icon"><span class="icon">k</span><%= widget.impressionist_count %></p>
+                        </div>
+
+                        <div class="col-sm-4 text-center">
+                            <p class="comment-icon"><span class="icon">k</span>Share</p>
+                        </div>
                     </div>
+
                 </div>
             </div>
         
@@ -165,58 +167,66 @@
 
         <% if widget.media == "rich" %>
 
-        <div class="item">
-
-        <div class="widget-info">
-            <div class="container-fluid">
-                <div class="row">
-
-                    <div class="col-sm-12">
-                        <div class="widget-user-avatar">
-                            <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
-                        </div>
-                        <h2><a href="/users/<%= widget.user.id %>"><%= widget.username %></a></h2>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+                <div class="item">
 
             <%= link_to widget_path(widget) do %>
-            <div class="img-container">
 
-                <div class="information">
-                    <h3><%= widget.title %></h3>
-                    <p><%= widget.source %></p>
+
+
+            <div class="img-container">
+                <div class="open-icon png-icon">
+                    <img src="<%= image_path "audio.png" %>">
                 </div>
                 <div class="image" style="background-image:url('<%= widget.thumb %>')"></div>
-                
             </div>
-            <% end %>
 
+            <div class="widget-info">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">               
+                            <h3><%= widget.title %></h3>
+                            <p><%= widget.description %></p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="widget-user-avatar">
+                                <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
+                            </div>
+                            <h2><a href="/users/<%= widget.user.id %>"><%= widget.username %></a></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+
+            <% end %>
 
             <div class="widget-stats">
                 <div class="container-fluid">
-                    <div class="row">
 
-                        <div class="col-md-12">
-                            <div class="widget-post-stats">
+                    <div class="row widget-post-stats">
+                        <div class="col-md-4 text-center">
                             <% if current_user && current_user.voted_for?(widget) %>
                                 <p class="heart-icon-liked"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% else %>
                                 <p class="heart-icon"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% end %>
-
-                                <p class="comment-icon"><span class="icon">p</span>653</p>
-                                <p class="comment-icon"><span class="icon">k</span><%= widget.impressionist_count %></p>
-                            </div>
-
                         </div>
 
+                        <div class="col-sm-4 text-center">
+                            <p class="comment-icon"><span class="icon">k</span><%= widget.impressionist_count %></p>
+                        </div>
+
+                        <div class="col-sm-4 text-center">
+                            <p class="comment-icon"><span class="icon">k</span>Share</p>
+                        </div>
                     </div>
+
                 </div>
             </div>
-
         </div>
 
 
@@ -260,25 +270,25 @@
 
             <div class="widget-stats">
                 <div class="container-fluid">
-                    <div class="row">
 
-
-                        <div class="col-md-12">
-                            <div class="widget-post-stats">
+                    <div class="row widget-post-stats">
+                        <div class="col-md-4 text-center">
                             <% if current_user && current_user.voted_for?(widget) %>
                                 <p class="heart-icon-liked"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% else %>
                                 <p class="heart-icon"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% end %>
-
-                            
-
-                                <p class="comment-icon"><span class="icon">p</span>653</p>
-                            </div>
-
                         </div>
 
+                        <div class="col-sm-4 text-center">
+                            <p class="comment-icon"><span class="icon">k</span>Source</p>
+                        </div>
+
+                        <div class="col-sm-4 text-center">
+                            <p class="comment-icon"><span class="icon">k</span>Share</p>
+                        </div>
                     </div>
+
                 </div>
             </div>
 

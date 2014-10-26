@@ -44,25 +44,25 @@
 
             <div class="widget-stats">
                 <div class="container-fluid">
-                    <div class="row">
 
-                        <div class="col-md-3">
-                        </div>
-
-                        <div class="col-md-9">
-                            <div class="widget-post-stats">
+                    <div class="row widget-post-stats">
+                        <div class="col-md-4 text-center">
                             <% if current_user && current_user.voted_for?(widget) %>
                                 <p class="heart-icon-liked"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% else %>
                                 <p class="heart-icon"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% end %>
-
-                                <p class="comment-icon"><span class="icon">k</span><%= widget.impressionist_count %></p>
-                            </div>
-
                         </div>
 
+                        <div class="col-sm-4 text-center">
+                            <p class="comment-icon"><span class="icon">k</span><%= widget.impressionist_count %></p>
+                        </div>
+
+                        <div class="col-sm-4 text-center">
+                            <p class="comment-icon"><span class="icon">k</span>Share</p>
+                        </div>
                     </div>
+
                 </div>
             </div>
 
@@ -113,21 +113,25 @@
 
             <div class="widget-stats">
                 <div class="container-fluid">
-                    <div class="row">
 
-                        <div class="col-md-12">
-                            <div class="widget-post-stats">
+                    <div class="row widget-post-stats">
+                        <div class="col-md-4 text-center">
                             <% if current_user && current_user.voted_for?(widget) %>
                                 <p class="heart-icon-liked"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% else %>
                                 <p class="heart-icon"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% end %>
-                                <p class="comment-icon"><span class="icon">k</span><%= widget.impressionist_count %></p>
-                            </div>
-
                         </div>
 
+                        <div class="col-sm-4 text-center">
+                            <p class="comment-icon"><span class="icon">k</span><%= widget.impressionist_count %></p>
+                        </div>
+
+                        <div class="col-sm-4 text-center">
+                            <p class="comment-icon"><span class="icon">k</span>Share</p>
+                        </div>
                     </div>
+
                 </div>
             </div>
         
@@ -176,25 +180,25 @@
 
             <div class="widget-stats">
                 <div class="container-fluid">
-                    <div class="row">
 
-                    <div class="col-md-3">
-                    </div>
-
-                        <div class="col-md-9">
-                            <div class="widget-post-stats">
+                    <div class="row widget-post-stats">
+                        <div class="col-md-4 text-center">
                             <% if current_user && current_user.voted_for?(widget) %>
                                 <p class="heart-icon-liked"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% else %>
                                 <p class="heart-icon"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% end %>
-
-                                <p class="comment-icon"><span class="icon">k</span><%= widget.impressionist_count %></p>
-                            </div>
-
                         </div>
 
+                        <div class="col-sm-4 text-center">
+                            <p class="comment-icon"><span class="icon">k</span><%= widget.impressionist_count %></p>
+                        </div>
+
+                        <div class="col-sm-4 text-center">
+                            <p class="comment-icon"><span class="icon">k</span>Share</p>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -240,22 +244,25 @@
 
             <div class="widget-stats">
                 <div class="container-fluid">
-                    <div class="row">
 
-
-                        <div class="col-md-12">
-                            <div class="widget-post-stats">
+                    <div class="row widget-post-stats">
+                        <div class="col-md-4 text-center">
                             <% if current_user && current_user.voted_for?(widget) %>
                                 <p class="heart-icon-liked"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% else %>
                                 <p class="heart-icon"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% end %>
-
-                            </div>
-
                         </div>
 
+                        <div class="col-sm-4 text-center">
+                            <p class="comment-icon"><span class="icon">k</span>Source</p>
+                        </div>
+
+                        <div class="col-sm-4 text-center">
+                            <p class="comment-icon"><span class="icon">k</span>Share</p>
+                        </div>
                     </div>
+
                 </div>
             </div>
 

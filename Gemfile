@@ -29,6 +29,10 @@ gem 'devise_invitable', '~> 1.3.4'
 
 gem "sass", "~> 3.2.5"
 
+gem 'mandrill_mailer'
+
+gem 'delayed_job_active_record'
+
 gem 'cancancan', '~> 1.9'
 
 gem 'embedly'

@@ -1,4 +1,4 @@
-  
+<% title @widget.title %>
 <div class="container inpost-header">
 
   <div class="row inpost-content-wrapper">
@@ -86,10 +86,19 @@
       </div>
     </div>
 
-        
+     
 </div>
 
-
+<div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center delete-links">
+          <% if can? :update, @widget %>
+            <%= link_to "Edit", edit_widget_path(@widget) %>
+            <%= link_to "Delete", @widget, :method => :delete, :confirm => "Are you sure ?"%>
+          <% end %>
+      </div>
+    </div>
+</div>
 
 
 
@@ -102,7 +111,4 @@
 
 
 
-<% if can? :update, @widget %>
-    <%= link_to "Edit", edit_widget_path(@widget) %> |
-<% end %>
 
