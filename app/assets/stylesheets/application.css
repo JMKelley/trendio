@@ -14,7 +14,7 @@
  *= require widgets
  *= require users
  *= require scaffolds
- *= require icon-styles
+ *= require material-design-iconic-font
  *= require main
 
  */
