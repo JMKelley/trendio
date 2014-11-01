@@ -60,7 +60,7 @@ mixpanel.init("16ed2e8babf9b2d94e15dcab40365136");</script><!-- end Mixpanel -->
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="#" id="overlay-open" class="open-company-nav"><span class="icon">x</span></a></li>
+            <li><a href="#" id="overlay-open" class="open-company-nav"><i class="md-menu md-5x"></i></a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             
@@ -68,20 +68,18 @@ mixpanel.init("16ed2e8babf9b2d94e15dcab40365136");</script><!-- end Mixpanel -->
 
         <% if user_signed_in? %>
 
-			  <li>
-			     <a href="/users/<%= current_user.id %>/favourites" data-toggle="tooltip" data-placement="bottom" title="My Favourites"><i class="md-favorite md-lg"></i>Favs</a>
-			  </li>
-
-
         <li>
-          <%= link_to new_user_invitation_path do  %><i class="md-wallet-giftcard md-lg"></i>Invite<% end %>
+           <a href="/users/<%= current_user.id %>/favourites" data-toggle="tooltip" data-placement="bottom" title="My Favourites"><i class="md-favorite md-heart"></i></a>
         </li>
 
         <li>
-          <a href="#" id="points" data-toggle="tooltip" data-placement="bottom" title="My Score">
-            <i class="md-wallet-giftcard md-lg"></i><%= current_user.points %>
-          </a>
+           <a href="#"><i class="md-group md-5x"></i></a>
         </li>
+
+        <li>
+           <a href="#"><div class="activity png-icon"><img src="<%= image_path 'activity.png' %>"/></div></a>
+        </li>
+
 
 			<% else %>
 
@@ -97,8 +95,8 @@ mixpanel.init("16ed2e8babf9b2d94e15dcab40365136");</script><!-- end Mixpanel -->
 
           
 
-        <div class="user-dropdown">
-			     <a href="/users/<%= current_user.id %>" class="dropdown-toggle user-menu" id="user-dropdown" data-toggle="dropdown"><%= current_user.username %><span class="caret"></span></a>
+        <div class="user-dropdown">        
+			     <a href="/users/<%= current_user.id %>" class="dropdown-toggle user-menu user-name" id="user-dropdown" data-toggle="dropdown"><%= current_user.username %><span class="caret"></span></a>
            <ul class="dropdown-menu" role="menu" aria-labelledby="userdropdown">
             <li role="presentation">
               <%= link_to edit_user_registration_path do  %><i class="md md-settings md-spin md-lg"></i>Account Settings<% end %>

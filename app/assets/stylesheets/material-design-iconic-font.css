@@ -32,6 +32,34 @@
 .md-2x {
   font-size: 2em;
 }
+
+.md-heart {
+  font-size: 20px;
+}
+
+.md-widget-heart
+{
+  font-size:19px;
+  vertical-align: middle;
+  margin-top: 0px;
+}
+
+.md-widget-link
+{
+  font-size:25px;
+}
+
+.md-widget-more
+{
+  font-size:25px;
+  margin-right: 0px;
+}
+
+.md-widget-play
+{
+  font-size:70px;
+}
+
 .md-3x {
   font-size: 3em;
 }
@@ -39,7 +67,7 @@
   font-size: 4em;
 }
 .md-5x {
-  font-size: 5em;
+  font-size: 25px;
 }
 .md-border {
   padding: .2em .25em .15em;

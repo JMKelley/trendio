@@ -33,12 +33,8 @@ $(document).ready(function() {
             $this.remove();
     });
 
-    $('.item .widget-info h3').each(function() {
-        var $this = $(this);
-        if($this.html().replace(/\s|&nbsp;/g, '').length == 0)
-            $this.remove();
-    });
-      
+
+
     $("body").tooltip({ selector: '[data-toggle=tooltip]' });
 
     $('#overlay-open').click(function(){

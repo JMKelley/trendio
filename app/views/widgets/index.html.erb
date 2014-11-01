@@ -34,22 +34,24 @@
                 <ul class="clearfix">
                     <li>
                         <%= link_to root_path(:order => 'popular'), class: "editor" do %>
-                          Most Popular
+                          Popular
                         <% end %>
                     </li>
                     <li>
-                        <a href="#" class="commented">Most Commented</a>
+                        <a href="#" class="commented">Following</a>
                     </li>
                     <li>
                         <%= link_to root_path(:order => 'newest'), class: "trending" do %>
-                          Newest
+                          Groups
                         <% end %>
                     </li>
                     
                     <li>
                      <% if user_signed_in? %>
 
-                        <%= link_to "Submit Link", new_widget_path, class: "btn btn-new"  %>
+                        <%= link_to new_widget_path, class: "btn btn-new" do  %>
+                            <i class="md-create md-5x"></i>
+                        <% end %>
 
                     <% else %>
 
@@ -64,7 +66,8 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container feed-container">
+
     <div id="container">
 
 <%= render 'layouts/feed' %>
@@ -88,7 +91,7 @@
 <script>
     $("#container").gridalicious({
       gutter: 40,
-      width: 369,
+      width: 300,
       animate: true,
       animationOptions: {
         queue: true,

@@ -1,111 +1,99 @@
 
-    <% @widgets.each do |widget| %>
+<% @widgets.each do |widget| %>
 
 
-        <% if widget.media == "photo" %>
+    <% if widget.media == "photo" %>
             
         <div class="item">
 
-            <%= link_to widget_path(widget) do %>
+            <div class="row widget-user">
+                <div class="col-sm-12">
+                    <div class="widget-user-avatar">
+                        <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
+                    </div>
+                    <h2><a href="/users/<%= widget.user.id %>"><%= widget.username %></a></h2>
+                </div>
+            </div>
 
-
+        <%= link_to widget_path(widget) do %>
 
             <div class="img-container">
-                <div class="open-icon png-icon">
-                    <img src="<%= image_path "open.png" %>">
-                </div>
-                <div class="image" style="background-image:url('<%= widget.content %>')"></div>
+                <img src="<%= widget.content %>"/>
             </div>
 
-            <div class="widget-info">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-12">               
-                            <h3><%= widget.title %></h3>
-                            <p><%= widget.description %></p>
-                        </div>
-                    </div>
+                <% unless widget.title.blank? %>
 
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="widget-user-avatar">
-                                <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
+                    <div class="widget-info">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12">               
+                                    <h3><%= widget.title %></h3>
+                                </div>
                             </div>
-                            <h2><a href="/users/<%= widget.user.id %>"><%= widget.username %></a></h2>
                         </div>
                     </div>
-                </div>
-            </div>
+                <% end %>
 
-           
-
-            <% end %>
+        <% end %>
 
             <div class="widget-stats">
                 <div class="container-fluid">
 
                     <div class="row widget-post-stats">
-                        <div class="col-md-4 text-center">
+                        <div class="col-sm-7 text-left">
                             <% if current_user && current_user.voted_for?(widget) %>
                                 <p class="heart-icon-liked"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% else %>
-                                <p class="heart-icon"><span class="icon">n</span><%= widget.get_likes.size %></p>
+                                <p class="heart-icon"><i class="md-favorite md-widget-heart"></i><%= widget.get_likes.size %></p>
                             <% end %>
                         </div>
 
-                        <div class="col-sm-4 text-center">
-                            <p class="comment-icon"><span class="icon">k</span><%= widget.impressionist_count %></p>
+                        <div class="col-sm-5 text-right">
+                            <a href="#" class="more-icon"><i class="md-more-horiz md-widget-more"></i></a>
+                            <a href="<%= widget.url %>" class="source-icon"><i class="md-link md-widget-link"></i></a>
                         </div>
 
-                        <div class="col-sm-4 text-center">
-                            <p class="comment-icon"><span class="icon">k</span>Share</p>
-                        </div>
                     </div>
 
                 </div>
             </div>
 
-
-           
-
-
-
-
         </div>
 
-        <% end %>
+    <% end %>
 
         <% if widget.media == "video" %>
         <div class="item video-item">
 
+                <div class="row widget-user">
+                    <div class="col-sm-12">
+                        <div class="widget-user-avatar">
+                            <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
+                        </div>
+                        <h2><a href="/users/<%= widget.user.id %>"><%= widget.username %></a></h2>
+                    </div>
+                </div>
             <%= link_to widget_path(widget) do %>
                 
-                <div class="video-container"> 
-                    <div class="open-icon png-icon">
-                        <img src="<%= image_path "play.png" %>">
-                    </div>
+                <div class="video-container">
+                    <div class="play-video">
+                        <i class="md-play-arrow md-widget-play"></i>
+                    </div> 
                     <div class="video" style="background-image:url('<%= widget.thumb %>')"></div>
                 </div>
 
-                <div class="widget-info">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-12">               
-                            <h3><%= widget.title %></h3>
-                            <p><%= widget.description %></p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="widget-user-avatar">
-                                <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
+                <% unless widget.title.blank? %> 
+                    <div class="widget-info">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12">               
+                                    <h3><%= widget.title %></h3>
+                                    <p><%= widget.description %></p>
+                                </div>
                             </div>
-                            <h2><a href="/users/<%= widget.user.id %>"><%= widget.username %></a></h2>
                         </div>
                     </div>
-                </div>
-            </div>
+                <% end %>
                 
 
             <% end %>
@@ -114,21 +102,19 @@
                 <div class="container-fluid">
 
                     <div class="row widget-post-stats">
-                        <div class="col-md-4 text-center">
+                        <div class="col-sm-7 text-left">
                             <% if current_user && current_user.voted_for?(widget) %>
                                 <p class="heart-icon-liked"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% else %>
-                                <p class="heart-icon"><span class="icon">n</span><%= widget.get_likes.size %></p>
+                                <p class="heart-icon"><i class="md-favorite md-widget-heart"></i><%= widget.get_likes.size %></p>
                             <% end %>
                         </div>
 
-                        <div class="col-sm-4 text-center">
-                            <p class="comment-icon"><span class="icon">k</span><%= widget.impressionist_count %></p>
+                        <div class="col-sm-5 text-right">
+                            <a href="#" class="more-icon"><i class="md-more-horiz md-widget-more"></i></a>
+                            <a href="<%= widget.url %>" class="source-icon"><i class="md-link md-widget-link"></i></a>
                         </div>
 
-                        <div class="col-sm-4 text-center">
-                            <p class="comment-icon"><span class="icon">k</span>Share</p>
-                        </div>
                     </div>
 
                 </div>
@@ -140,62 +126,58 @@
 
         <% if widget.media == "rich" %>
 
-                <div class="item">
+        <div class="item">
 
-            <%= link_to widget_path(widget) do %>
-
-
-
-            <div class="img-container">
-                <div class="open-icon png-icon">
-                    <img src="<%= image_path "audio.png" %>">
+            <div class="row widget-user">
+                <div class="col-sm-12">
+                    <div class="widget-user-avatar">
+                        <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
+                    </div>
+                    <h2><a href="/users/<%= widget.user.id %>"><%= widget.username %></a></h2>
                 </div>
-                <div class="image" style="background-image:url('<%= widget.thumb %>')"></div>
             </div>
 
-            <div class="widget-info">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-12">               
-                            <h3><%= widget.title %></h3>
-                            <p><%= widget.description %></p>
-                        </div>
-                    </div>
+        <%= link_to widget_path(widget) do %>
+                
+                <div class="video-container">
+                    <div class="play-video">
+                        <i class="md-play-arrow md-widget-play"></i>
+                    </div> 
+                    <div class="video" style="background-image:url('<%= widget.thumb %>')"></div>
+                </div>
 
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="widget-user-avatar">
-                                <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
+                <% unless widget.title.blank? %> 
+                    <div class="widget-info">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12">               
+                                    <h3><%= widget.title %></h3>
+                                    <p><%= widget.description %></p>
+                                </div>
                             </div>
-                            <h2><a href="/users/<%= widget.user.id %>"><%= widget.username %></a></h2>
                         </div>
                     </div>
-                </div>
-            </div>
-
-           
-
-            <% end %>
+                <% end %>
+                
+        <% end %>
 
             <div class="widget-stats">
                 <div class="container-fluid">
 
                     <div class="row widget-post-stats">
-                        <div class="col-md-4 text-center">
+                        <div class="col-sm-7 text-left">
                             <% if current_user && current_user.voted_for?(widget) %>
                                 <p class="heart-icon-liked"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% else %>
-                                <p class="heart-icon"><span class="icon">n</span><%= widget.get_likes.size %></p>
+                                <p class="heart-icon"><i class="md-favorite md-widget-heart"></i><%= widget.get_likes.size %></p>
                             <% end %>
                         </div>
 
-                        <div class="col-sm-4 text-center">
-                            <p class="comment-icon"><span class="icon">k</span><%= widget.impressionist_count %></p>
+                        <div class="col-sm-5 text-right">
+                            <a href="#" class="more-icon"><i class="md-more-horiz md-widget-more"></i></a>
+                            <a href="<%= widget.url %>" class="source-icon"><i class="md-link md-widget-link"></i></a>
                         </div>
 
-                        <div class="col-sm-4 text-center">
-                            <p class="comment-icon"><span class="icon">k</span>Share</p>
-                        </div>
                     </div>
 
                 </div>
@@ -210,56 +192,53 @@
 
         <div class="item">
 
-            <%= link_to widget.url, target: "_blank" do %>
-            
+            <div class="row widget-user">
+                <div class="col-sm-12">
+                    <div class="widget-user-avatar">
+                        <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
+                    </div>
+                    <h2><a href="/users/<%= widget.user.id %>"><%= widget.username %></a></h2>
+                </div>
+            </div>
+
+            <%= link_to widget_path(widget) do %>
+
             <div class="img-container">
-                <div class="open-icon png-icon">
-                    <img src="<%= image_path "link.png" %>">
-                </div>
-                <div class="image" style="background-image:url('<%= widget.thumb %>')"></div>
+                <img src="<%= widget.thumb %>"/>
             </div>
 
-            <div class="widget-info">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-12">               
-                            <h3><%= widget.title %></h3>
-                            <p><%= widget.description %></p>
-                        </div>
-                    </div>
+                <% unless widget.title.blank? %>
 
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="widget-user-avatar">
-                                <div class="avatar" style="background-image:url('<%= widget.user.avatar %>')"></div>
+                    <div class="widget-info">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12">               
+                                    <h3><%= widget.title %></h3>
+                                </div>
                             </div>
-                            <h2><a href="/users/<%= widget.user.id %>"><%= widget.username %></a></h2>
                         </div>
                     </div>
-                </div>
-            </div>
-            <% end %>
+                <% end %>
 
+        <% end %>
 
             <div class="widget-stats">
                 <div class="container-fluid">
 
                     <div class="row widget-post-stats">
-                        <div class="col-md-4 text-center">
+                        <div class="col-sm-7 text-left">
                             <% if current_user && current_user.voted_for?(widget) %>
                                 <p class="heart-icon-liked"><span class="icon">n</span><%= widget.get_likes.size %></p>
                             <% else %>
-                                <p class="heart-icon"><span class="icon">n</span><%= widget.get_likes.size %></p>
+                                <p class="heart-icon"><i class="md-favorite md-widget-heart"></i><%= widget.get_likes.size %></p>
                             <% end %>
                         </div>
 
-                        <div class="col-sm-4 text-center">
-                            <p class="comment-icon"><span class="icon">k</span>Source</p>
+                        <div class="col-sm-5 text-right">
+                            <a href="#" class="more-icon"><i class="md-more-horiz md-widget-more"></i></a>
+                            <a href="<%= widget.url %>" class="source-icon"><i class="md-link md-widget-link"></i></a>
                         </div>
 
-                        <div class="col-sm-4 text-center">
-                            <p class="comment-icon"><span class="icon">k</span>Share</p>
-                        </div>
                     </div>
 
                 </div>
