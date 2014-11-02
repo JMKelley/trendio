@@ -37,6 +37,8 @@ gem 'cancancan', '~> 1.9'
 
 gem 'embedly'
 
+gem "acts_as_follower", '~> 0.1.1'
+
 gem 'impressionist'
 
 gem 'markable'

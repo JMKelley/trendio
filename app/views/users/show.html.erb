@@ -1,6 +1,12 @@
 <div class="profile-top">
     <div class="row">
 
+        <% if user_signed_in? %>
+          <div id="follow_user">
+            <%= render :partial => "shared/follow_user", :locals => {:user => @user} %>
+          </div>
+        <% end %>
+
         <div class="col-md-4 text-center">
             <div class="user-likes">
                 <p><span class="icon">n</span><%= @user.find_liked_items.count %></p>

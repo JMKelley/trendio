@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141026204938) do
+ActiveRecord::Schema.define(:version => 20141102131200) do
 
   create_table "authorizations", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -103,6 +103,19 @@ ActiveRecord::Schema.define(:version => 20141026204938) do
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
+  create_table "follows", :force => true do |t|
+    t.integer  "followable_id",                      :null => false
+    t.string   "followable_type",                    :null => false
+    t.integer  "follower_id",                        :null => false
+    t.string   "follower_type",                      :null => false
+    t.boolean  "blocked",         :default => false, :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+  end
+
+  add_index "follows", ["followable_id", "followable_type"], :name => "fk_followables"
+  add_index "follows", ["follower_id", "follower_type"], :name => "fk_follows"
+
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
     t.integer  "impressionable_id"
@@ -135,6 +148,17 @@ ActiveRecord::Schema.define(:version => 20141026204938) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "likes", :force => true do |t|
+    t.string   "liker_type"
+    t.integer  "liker_id"
+    t.string   "likeable_type"
+    t.integer  "likeable_id"
+    t.datetime "created_at"
+  end
+
+  add_index "likes", ["likeable_id", "likeable_type"], :name => "fk_likeables"
+  add_index "likes", ["liker_id", "liker_type"], :name => "fk_likes"
+
   create_table "marks", :id => false, :force => true do |t|
     t.integer  "marker_id"
     t.string   "marker_type"
@@ -146,6 +170,17 @@ ActiveRecord::Schema.define(:version => 20141026204938) do
 
   add_index "marks", ["markable_id", "markable_type", "mark"], :name => "index_marks_on_markable_id_and_markable_type_and_mark"
   add_index "marks", ["marker_id", "marker_type", "mark"], :name => "index_marks_on_marker_id_and_marker_type_and_mark"
+
+  create_table "mentions", :force => true do |t|
+    t.string   "mentioner_type"
+    t.integer  "mentioner_id"
+    t.string   "mentionable_type"
+    t.integer  "mentionable_id"
+    t.datetime "created_at"
+  end
+
+  add_index "mentions", ["mentionable_id", "mentionable_type"], :name => "fk_mentionables"
+  add_index "mentions", ["mentioner_id", "mentioner_type"], :name => "fk_mentions"
 
   create_table "merit_actions", :force => true do |t|
     t.integer  "user_id"

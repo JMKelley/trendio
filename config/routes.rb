@@ -7,6 +7,9 @@ Trendy::Application.routes.draw do
     end
   end
 
+  resources :users, :only => [:index, :show] do
+    resources :follows, :only => [:create, :destroy]
+  end
 
   resources :widgets do
     member do
